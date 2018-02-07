@@ -1,0 +1,13 @@
+---------------------------------------------------------------
+|     Module     |         Message        |          Operation          |  
+| :----- | :------------: | :--------------------------------------: |  
+|TL_LED|LED_TURNON| TL_LED.turnOn()|  
+|TL_LED|LED_TURNOFF| TL_LED.turnOff()|  
+|TL_Relay|RELAY_TURNON|TL_Relay.turnOn()|  
+|TL_Relay|RELAY_TURNOFF|TL_Relay.turnOff()|  
+|TL_Motor|MOTOR_TURNON|TL_Motor.turnOn()|  
+|TL_Motor|MOTOR_TURNOFF|TL_Motor.turnOff()|  
+|TL_Buzzer|BUZZER_TURNON|TL_Buzzer.turnOn()|  
+|TL_Buzzer|BUZZER_TURNOFF|TL_Buzzer.turnOff()|  
+|TL_Display|DISPLAY_STRING|TL_Display.show(STRING)|  
+|TL_Speaker|SPEAKER_STRING|TL_Speaker.speak(STRING)|  

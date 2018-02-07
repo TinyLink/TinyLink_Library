@@ -1,0 +1,18 @@
+#ifndef TL_GPS_H
+#define TL_GPS_H
+
+#include "TL_DeviceID.h"
+
+#if GPS == U_BLOX
+  #if BOARD == 1002
+    #include "U_BLOX_Arduino_UNO.h"
+    #include "U_BLOX_Arduino_UNO.cpp"
+  #endif
+#elif GPS == BUILT_IN_GPS
+  #if BOARD == 1001
+    #include "Built_In_GPS_LinkIt_One.h"
+    #include "Built_In_GPS_LinkIt_One.cpp"
+  #endif
+#endif
+
+#endif

@@ -1,0 +1,20 @@
+#ifndef VOICE_USB_VOICE_BBB_H
+#define VOICE_USB_VOICE_BBB_H
+
+namespace tinylink {
+        class Voice_USB_RPI {
+
+        private:
+
+        protected:
+
+        public:
+                Voice_USB_RPI();
+                char* recognize(int time_s);
+        };
+}
+
+extern tinylink::Voice_USB_RPI TL_Voice;
+
+#endif
+
