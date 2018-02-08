@@ -121,10 +121,8 @@
 #endif
 
 #ifdef DISPLAY
-	#if PLATFORM == 4 && BOARD == 1003
-		#if DISPLAY == GROVE_LCD_RGB
-			#include "Grove_LCD_RGB_Display_RPI.h"
-		#endif
+	#if DISPLAY == GROVE_LCD_RGB
+		#include "Grove_LCD_RGB_Display_RPI.h"
 	#endif
 #endif
 

@@ -39,13 +39,5 @@
 // Light
 #define GROVE_LIGHT 3023
 
-// Relay
-#define GROVE_RELAY 3061
-
-// Voice
-#define VOICE_USB 3062
-
-// Display
-#define GROVE_LCD_RGB 3063
 
 #endif

@@ -2,9 +2,7 @@
 #include "Wiring.h"
 
 void _setup() {
-	#ifdef TIME
 	tinylink::Time::initialiseEpoch();
-	#endif
 	#ifdef TIMER
 	timer_initialize();
 	#endif
