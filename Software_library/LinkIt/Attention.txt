@@ -1,4 +1,0 @@
-In Attention:
-1. Put Origin_SD_lib to the LinkIt one lib, just cover the file.read(void *buf, uint16_t nbyte, boolean peek_mode) and file.write(String) -- overload.
-In linkit core lib:
-1. Fix SPI.cpp file, Modify Vmlog.h -> vmlog.h
