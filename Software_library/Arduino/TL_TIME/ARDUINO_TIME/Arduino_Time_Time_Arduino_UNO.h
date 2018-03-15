@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-class Time {
+class Arduino_Time_Time_Arduino_UNO {
 public:
 	void delayMillis(int millis) {
 		delay(millis);
@@ -19,6 +19,6 @@ public:
 	}
 };
 
-extern Time TL_Time;
+extern Arduino_Time_Time_Arduino_UNO TL_Time;
 
 #endif

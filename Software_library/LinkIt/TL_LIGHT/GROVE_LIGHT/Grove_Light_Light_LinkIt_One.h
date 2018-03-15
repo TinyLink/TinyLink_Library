@@ -5,13 +5,13 @@
 #include "TL_Config.h"
 #include "Sensor_template.h"
 
-class Grove_Light: public Sensor<double>{
+class Grove_Light_Light_LinkIt_One: public Sensor<double>{
 private:
-  int _read();
+	int _read();
 public:
-  Grove_Light();
+	Grove_Light_Light_LinkIt_One();
 };
 
-extern Grove_Light TL_Light;
+extern Grove_Light_Light_LinkIt_One TL_Light;
 
 #endif

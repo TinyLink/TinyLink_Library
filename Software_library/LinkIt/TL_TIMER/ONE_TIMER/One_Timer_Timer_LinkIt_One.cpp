@@ -1,6 +1,6 @@
 #include "One_Timer_Timer_LinkIt_One.h"
 
-TLC_Timer::TLC_Timer(int tid)
+One_Timer_Timer_LinkIt_One::One_Timer_Timer_LinkIt_One(int tid)
 {
   _tid = tid;
   void(*_callback)() = NULL;
@@ -9,7 +9,7 @@ TLC_Timer::TLC_Timer(int tid)
   _timerID = -1;
 }
 
-void createTimer(TLC_Timer* timer)
+void createTimer(One_Timer_Timer_LinkIt_One* timer)
 {
   // vm_create_timer is defined vmtimer.h
   // VMINT vm_create_timer(VMUINT32 millisec, VM_TIMERPROC_T timerproc);
@@ -28,17 +28,17 @@ void createTimer(TLC_Timer* timer)
   }
 }
 
-void TLC_Timer::attachInterrupt(void (*callback)())
+void One_Timer_Timer_LinkIt_One::attachInterrupt(void (*callback)())
 {
   _callback = callback;
 }
 
-void TLC_Timer::detachInterrupt()
+void One_Timer_Timer_LinkIt_One::detachInterrupt()
 {
   return;
 }
 
-void TLC_Timer::setFrequency(unsigned long freq, int type)
+void One_Timer_Timer_LinkIt_One::setFrequency(unsigned long freq, int type)
 {
   if (freq > 0)
   {
@@ -47,7 +47,7 @@ void TLC_Timer::setFrequency(unsigned long freq, int type)
   }
 }
 
-void TLC_Timer::setPeriod(unsigned long period, int type)
+void One_Timer_Timer_LinkIt_One::setPeriod(unsigned long period, int type)
 {
   if (period > 0)
   {
@@ -55,13 +55,13 @@ void TLC_Timer::setPeriod(unsigned long period, int type)
   }
 }
 
-bool TLC_Timer::start()
+bool One_Timer_Timer_LinkIt_One::start()
 {
   LTask.remoteCall((remote_call_ptr)createTimer, this);
   return true;
 }
 
-bool TLC_Timer::stop()
+bool One_Timer_Timer_LinkIt_One::stop()
 {
   if (_timerID >= 0)
   {
@@ -75,32 +75,32 @@ bool TLC_Timer::stop()
   }
 }
 
-unsigned long TLC_Timer::getFrequency()
+unsigned long One_Timer_Timer_LinkIt_One::getFrequency()
 {
   return _freq;
 }
 
-unsigned long TLC_Timer::getPeriod()
+unsigned long One_Timer_Timer_LinkIt_One::getPeriod()
 {
   return _period;
 }
 
-VMINT TLC_Timer::getTimerID()
+VMINT One_Timer_Timer_LinkIt_One::getTimerID()
 {
   return _timerID;
 }
 
-void TLC_Timer::setTimerID(VMINT timerID)
+void One_Timer_Timer_LinkIt_One::setTimerID(VMINT timerID)
 {
   _timerID = timerID;
 }
 
-VMINT TLC_Timer::getTID()
+VMINT One_Timer_Timer_LinkIt_One::getTID()
 {
   return _tid;
 }
 
-TLC_Timer TL_Timer(0);
-TLC_Timer TL_Timer1(1);
-TLC_Timer TL_Timer2(2);
-TLC_Timer TL_Timer3(3);
+One_Timer_Timer_LinkIt_One TL_Timer(0);
+One_Timer_Timer_LinkIt_One TL_Timer1(1);
+One_Timer_Timer_LinkIt_One TL_Timer2(2);
+One_Timer_Timer_LinkIt_One TL_Timer3(3);

@@ -4,9 +4,7 @@
 #include <Arduino.h>
 #include "TL_Config.h"
 
-class Arduino_LED_LED_Arduino_UNO
-{
-
+class Arduino_LED_LED_Arduino_UNO{
 private:
 	int stateSig;
 	const static int ledPin = 13;

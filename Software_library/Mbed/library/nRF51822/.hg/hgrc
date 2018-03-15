@@ -1,4 +1,0 @@
-[paths]
-default = https://mbed.org/teams/Nordic-Semiconductor/code/nRF51822
-[ui]
-ignore.local = .hg/hgignore

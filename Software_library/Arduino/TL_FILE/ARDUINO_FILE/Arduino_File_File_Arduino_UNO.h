@@ -1,0 +1,6 @@
+#ifndef ARDUINO_FILE_FILE_ARDUINO_UNO_H
+#define ARDUINO_FILE_FILE_ARDUINO_UNO_H
+
+#define TL_File File
+
+#endif

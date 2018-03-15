@@ -49,14 +49,18 @@ bool ESP8266_WiFi_Arduino_UNO::disjoin(){
 	}
 }
 
+#ifdef TINYLINK_HTTP
 TL_HTTP ESP8266_WiFi_Arduino_UNO::fetchHTTP(){
 	TL_HTTP oneHTTP;
 	return oneHTTP;
 }
+#endif
 
+#ifdef TINYLINK_MQTT
 TL_MQTT ESP8266_WiFi_Arduino_UNO::fetchMQTT(){
 	TL_MQTT oneMQTT;
 	return oneMQTT;
 }
+#endif
 
 ESP8266_WiFi_Arduino_UNO TL_WiFi;

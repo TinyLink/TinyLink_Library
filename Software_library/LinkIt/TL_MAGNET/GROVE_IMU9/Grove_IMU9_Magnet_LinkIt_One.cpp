@@ -1,10 +1,10 @@
 #include "Grove_IMU9_Magnet_LinkIt_One.h"
 
-Grove_9DOF_Magnet::Grove_9DOF_Magnet(){
+Grove_IMU9_Magnet_LinkIt_One::Grove_IMU9_Magnet_LinkIt_One(){
 	state = 0;
 }
 
-int Grove_9DOF_Magnet::read(){
+int Grove_IMU9_Magnet_LinkIt_One::read(){
 	if (state == 0){
 		Wire.begin();
 		magnet.initialize();
@@ -32,19 +32,16 @@ int Grove_9DOF_Magnet::read(){
 	}
 }
 
-double Grove_9DOF_Magnet::data_x(){
+double Grove_IMU9_Magnet_LinkIt_One::data_x(){
 	return (double) mx * 4800 / 8192;
 }
 
-double Grove_9DOF_Magnet::data_y(){
+double Grove_IMU9_Magnet_LinkIt_One::data_y(){
 	return (double) my * 4800 / 8192;
 }
 
-double Grove_9DOF_Magnet::data_z(){
+double Grove_IMU9_Magnet_LinkIt_One::data_z(){
 	return (double) mz * 4800 / 8192;
 }
 
-
-#if MAGNET == GROVE_IMU9
-	Grove_9DOF_Magnet TL_Magnet;
-#endif
+Grove_IMU9_Magnet_LinkIt_One TL_Magnet;

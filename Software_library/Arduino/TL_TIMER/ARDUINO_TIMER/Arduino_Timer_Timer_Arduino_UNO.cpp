@@ -1,12 +1,12 @@
 #include "Arduino_Timer_Timer_Arduino_UNO.h"
 
-TLC_Timer::TLC_Timer(int tid)
+Arduino_Timer_Timer_Arduino_UNO::Arduino_Timer_Timer_Arduino_UNO(int tid)
 {
   _tid = tid;
   state = -2;
 }
 
-void TLC_Timer::attachInterrupt(void (*callback)())
+void Arduino_Timer_Timer_Arduino_UNO::attachInterrupt(void (*callback)())
 {
   if (_tid == 1)
   {
@@ -15,7 +15,7 @@ void TLC_Timer::attachInterrupt(void (*callback)())
   }
 }
 
-void TLC_Timer::detachInterrupt()
+void Arduino_Timer_Timer_Arduino_UNO::detachInterrupt()
 {
   if (_tid == 1)
   {
@@ -23,7 +23,7 @@ void TLC_Timer::detachInterrupt()
   }
 }
 
-void TLC_Timer::setFrequency(unsigned long freq, int type)
+void Arduino_Timer_Timer_Arduino_UNO::setFrequency(unsigned long freq, int type)
 {
   if (freq > 0)
   {
@@ -32,7 +32,7 @@ void TLC_Timer::setFrequency(unsigned long freq, int type)
   }
 }
 
-void TLC_Timer::setPeriod(unsigned long period, int type)
+void Arduino_Timer_Timer_Arduino_UNO::setPeriod(unsigned long period, int type)
 {
   if (period > 0)
   {
@@ -40,7 +40,7 @@ void TLC_Timer::setPeriod(unsigned long period, int type)
   }
 }
 
-bool TLC_Timer::start()
+bool Arduino_Timer_Timer_Arduino_UNO::start()
 {
   if (_tid == 1)
   {
@@ -58,7 +58,7 @@ bool TLC_Timer::start()
   return true;
 }
 
-bool TLC_Timer::stop()
+bool Arduino_Timer_Timer_Arduino_UNO::stop()
 {
   if (_tid == 1)
   {
@@ -71,18 +71,18 @@ bool TLC_Timer::stop()
   return true;
 }
 
-unsigned long TLC_Timer::getFrequency()
+unsigned long Arduino_Timer_Timer_Arduino_UNO::getFrequency()
 {
   return _freq;
 }
 
-unsigned long TLC_Timer::getPeriod()
+unsigned long Arduino_Timer_Timer_Arduino_UNO::getPeriod()
 {
   return _period;
 }
 
-int TLC_Timer::getTID()
+int Arduino_Timer_Timer_Arduino_UNO::getTID()
 {
   return _tid;
 }
-TLC_Timer TL_Timer(1);
+Arduino_Timer_Timer_Arduino_UNO TL_Timer(1);

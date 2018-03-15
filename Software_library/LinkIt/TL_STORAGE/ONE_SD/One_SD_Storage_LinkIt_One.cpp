@@ -1,21 +1,23 @@
 #include "One_SD_Storage_LinkIt_One.h"
 
-Internal_SD::Internal_SD(){
+One_SD_Storage_LinkIt_One::One_SD_Storage_LinkIt_One(){
+#ifdef TINYLINK_FILE
 	TL_File myFile;
+#endif
 }
 
-char* Internal_SD::StoC(String s){
+char* One_SD_Storage_LinkIt_One::StoC(String s){
 	char* res = (char*)malloc(sizeof(char)*sizeof(s));
 	s.toCharArray(res,sizeof(s));
 	return res;
 }
 
-bool Internal_SD::begin(){
+bool One_SD_Storage_LinkIt_One::begin(){
 	pinMode(10, OUTPUT);
 	return Drv.begin();
 }
 
-bool Internal_SD::exists(String path){
+bool One_SD_Storage_LinkIt_One::exists(String path){
 	char* temp = StoC(path);
 	if(Drv.exists(temp)){
 		free(temp);
@@ -26,7 +28,7 @@ bool Internal_SD::exists(String path){
 	}
 }
 
-bool Internal_SD::mkdir(String path){
+bool One_SD_Storage_LinkIt_One::mkdir(String path){
 	char* temp = StoC(path);
 	if(Drv.mkdir(temp)){
 		free(temp);
@@ -37,7 +39,7 @@ bool Internal_SD::mkdir(String path){
 	}
 }
 
-bool Internal_SD::rmdir(String path){
+bool One_SD_Storage_LinkIt_One::rmdir(String path){
 	char* temp = StoC(path);
 	if(Drv.rmdir(temp)){
 		free(temp);
@@ -48,7 +50,7 @@ bool Internal_SD::rmdir(String path){
 	}
 }
 
-bool Internal_SD::remove(String path){
+bool One_SD_Storage_LinkIt_One::remove(String path){
 	char* temp = StoC(path);
 	if(Drv.remove(temp)){
 		free(temp);
@@ -59,8 +61,8 @@ bool Internal_SD::remove(String path){
 	}
 }
 
-
-TL_File Internal_SD::open(String path, String mode){
+#ifdef TINYLINK_FILE
+TL_File One_SD_Storage_LinkIt_One::open(String path, String mode){
 	char pathStr[128];
 	path.toCharArray(pathStr, 127);
 	if(mode == "w"){
@@ -69,5 +71,6 @@ TL_File Internal_SD::open(String path, String mode){
 	myFile = Drv.open(pathStr, (mode == "w" ? 0x13 : 0x01));
 	return myFile;
 }
+#endif
 
-Internal_SD TL_Storage;
+One_SD_Storage_LinkIt_One TL_Storage;

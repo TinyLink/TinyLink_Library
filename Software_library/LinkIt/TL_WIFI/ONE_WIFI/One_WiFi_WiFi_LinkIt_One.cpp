@@ -34,14 +34,18 @@ bool One_WiFi_WiFi_LinkIt_One::disjoin(){
 	return true;
 }
 
+#ifdef TINYLINK_HTTP
 TL_HTTP One_WiFi_WiFi_LinkIt_One::fetchHTTP(){
 	TL_HTTP oneHTTP;
 	return oneHTTP;
 }
+#endif
 
+#ifdef TINYLINK_MQTT
 TL_MQTT One_WiFi_WiFi_LinkIt_One::fetchMQTT(){
 	TL_MQTT oneMQTT;
 	return oneMQTT;
 }
+#endif
 
 One_WiFi_WiFi_LinkIt_One TL_WiFi;

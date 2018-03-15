@@ -1,4 +1,0 @@
-[paths]
-default = https://mbed.org/teams/Bluetooth-Low-Energy/code/BLE_API
-[ui]
-ignore.local = .hg/hgignore

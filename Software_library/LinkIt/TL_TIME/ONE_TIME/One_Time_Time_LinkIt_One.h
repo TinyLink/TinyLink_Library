@@ -1,9 +1,9 @@
-#ifndef TIME_LINKIT_ONE_H
-#define TIME_LINKIT_ONE_H
+#ifndef ONE_TIME_TIME_LINKIT_ONE_H
+#define ONE_TIME_TIME_LINKIT_ONE_H
 
 #include <Arduino.h>
 
-class Time {
+class One_Time_Time_LinkIt_One {
 public:
 	void delayMillis(int millis) {
 		delay(millis);
@@ -19,6 +19,6 @@ public:
 	}
 };
 
-extern Time TL_Time;
+extern One_Time_Time_LinkIt_One TL_Time;
 
 #endif

@@ -7,7 +7,7 @@
 #define TIMER_ONE_SHOT 0
 #define TIMER_PERIODIC 1
 
-class TLC_Timer {
+class Arduino_Timer_Timer_Arduino_UNO {
 private:
   int _tid;      //timer ID in TinyLink
   // VMINT _timerID;    //timer ID in LinkIt One
@@ -18,7 +18,7 @@ private:
 public:
   void (*_callback)();
   
-  TLC_Timer(int tid);
+  Arduino_Timer_Timer_Arduino_UNO(int tid);
   void attachInterrupt(void (*callback)());
   void detachInterrupt();
   void setFrequency(unsigned long freq, int type = TIMER_PERIODIC);
@@ -32,6 +32,6 @@ public:
   int getTID();
   // void setTimerID(VMINT timerID);};
 };
-extern TLC_Timer TL_Timer;
+extern Arduino_Timer_Timer_Arduino_UNO TL_Timer;
 
 #endif

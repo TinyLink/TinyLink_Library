@@ -8,6 +8,9 @@
 #define ONE_SERIAL 1001
 #define ONE_TIME 1001
 #define ONE_TIMER 1001
+// #define ONE_MQTT 1001
+#define ONE_HTTP 1001
+#define ONE_FILE 1001
 
 #define SD_SHIELD 2003
 

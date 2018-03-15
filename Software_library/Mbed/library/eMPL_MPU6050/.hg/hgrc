@@ -1,4 +1,0 @@
-[paths]
-default = https://developer.mbed.org/teams/Seeed/code/eMPL_MPU6050
-[ui]
-ignore.local = .hg/hgignore

@@ -1,23 +1,25 @@
 #include "SD_Shield_Storage_Arduino_UNO.h"
 
-SD_Card::SD_Card(){
+SD_Shield_Storage_Arduino_UNO::SD_Shield_Storage_Arduino_UNO(){
+#ifdef TINYLINK_FILE
 	TL_File myFile;
+#endif
 }
 
-char* SD_Card::StoC(String s){
+char* SD_Shield_Storage_Arduino_UNO::StoC(String s){
 	char* res = (char*)malloc(sizeof(char)*sizeof(s));
 	s.toCharArray(res,sizeof(s));
 	return res;
 }
 
-bool SD_Card::begin(){
+bool SD_Shield_Storage_Arduino_UNO::begin(){
 	if (!SD.begin(4)) {
 		return false;
 	}
 	return true;
 }
 
-bool SD_Card::exists(String path){
+bool SD_Shield_Storage_Arduino_UNO::exists(String path){
 	char* temp = StoC(path);
 	if(SD.exists(temp)){
 		free(temp);
@@ -28,7 +30,7 @@ bool SD_Card::exists(String path){
 	}
 }
 
-bool SD_Card::mkdir(String path){
+bool SD_Shield_Storage_Arduino_UNO::mkdir(String path){
 	char* temp = StoC(path);
 	if(SD.mkdir(temp)){
 		free(temp);
@@ -39,7 +41,7 @@ bool SD_Card::mkdir(String path){
 	}
 }
 
-bool SD_Card::rmdir(String path){
+bool SD_Shield_Storage_Arduino_UNO::rmdir(String path){
 	char* temp = StoC(path);
 	if(SD.rmdir(temp)){
 		free(temp);
@@ -50,7 +52,7 @@ bool SD_Card::rmdir(String path){
 	}
 }
 
-bool SD_Card::remove(String path){
+bool SD_Shield_Storage_Arduino_UNO::remove(String path){
 	char* temp = StoC(path);
 	if(SD.remove(temp)){
 		free(temp);
@@ -61,7 +63,8 @@ bool SD_Card::remove(String path){
 	}
 }
 
-TL_File SD_Card::open(String path, String mode){
+#ifdef TINYLINK_FILE
+TL_File SD_Shield_Storage_Arduino_UNO::open(String path, String mode){
 	char* temp = StoC(path);
 	if(mode == "w"){
 		remove(temp);
@@ -70,5 +73,6 @@ TL_File SD_Card::open(String path, String mode){
 	free(temp);
 	return myFile;
 }
+#endif
 
-SD_Card TL_Storage;
+SD_Shield_Storage_Arduino_UNO TL_Storage;

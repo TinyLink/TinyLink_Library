@@ -1,8 +1,0 @@
-data/dmpmap.h.i
-data/inv_mpu_dmp_motion_driver.c.i
-data/inv_mpu.c.i
-data/mbed_i2c.c.i
-data/mbed_i2c.h.i
-data/dmpKey.h.i
-data/inv_mpu.h.i
-data/inv_mpu_dmp_motion_driver.h.i

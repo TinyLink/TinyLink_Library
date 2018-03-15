@@ -44,7 +44,4 @@ double Grove_9DOF_Magnet::data_z(){
 	return (double) mz * 4800 / 8192;
 }
 
-
-#if MAGNET == GROVE_IMU9
-	Grove_9DOF_Magnet TL_Magnet;
-#endif
+Grove_9DOF_Magnet TL_Magnet;

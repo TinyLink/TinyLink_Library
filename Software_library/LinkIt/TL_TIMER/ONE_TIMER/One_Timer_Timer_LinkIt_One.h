@@ -8,7 +8,7 @@
 #define TIMER_PERIODIC 1
 #define TIMER_ONE_SHOT 0
 
-class TLC_Timer {
+class One_Timer_Timer_LinkIt_One {
 private:
   int _tid;      //timer ID in TinyLink
   VMINT _timerID;    //timer ID in LinkIt One
@@ -18,7 +18,7 @@ private:
 
 public:
   void (*_callback)();
-  TLC_Timer(int tid);
+  One_Timer_Timer_LinkIt_One(int tid);
   void attachInterrupt(void (*callback)());
   void detachInterrupt();
   void setFrequency(unsigned long freq, int type = TIMER_PERIODIC);
@@ -33,9 +33,9 @@ public:
   void setTimerID(VMINT timerID);
 };
 
-extern TLC_Timer TL_Timer;
-extern TLC_Timer TL_Timer1;
-extern TLC_Timer TL_Timer2;
-extern TLC_Timer TL_Timer3;
+extern One_Timer_Timer_LinkIt_One TL_Timer;
+extern One_Timer_Timer_LinkIt_One TL_Timer1;
+extern One_Timer_Timer_LinkIt_One TL_Timer2;
+extern One_Timer_Timer_LinkIt_One TL_Timer3;
 
 #endif

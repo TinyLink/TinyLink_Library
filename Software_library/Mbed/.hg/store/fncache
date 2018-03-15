@@ -1,7 +1,0 @@
-data/eMPL_MPU6050.lib.i
-data/tiny_ble.h.i
-data/BLE_API.lib.i
-data/main.cpp.i
-data/nRF51822.lib.i
-data/mbed.bld.i
-data/battery.h.i

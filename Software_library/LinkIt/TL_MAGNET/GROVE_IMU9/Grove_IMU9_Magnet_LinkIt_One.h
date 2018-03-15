@@ -8,7 +8,7 @@
 #include "I2Cdev.h"
 
 
-class Grove_9DOF_Magnet{
+class Grove_IMU9_Magnet_LinkIt_One{
 private:
 	MPU9250 magnet;
 	int state;
@@ -16,13 +16,13 @@ private:
 	I2Cdev I2C_M;
 	int16_t mx, my, mz;
 public:
-	Grove_9DOF_Magnet();
+	Grove_IMU9_Magnet_LinkIt_One();
 	int read();
 	double data_x();
 	double data_y();
 	double data_z();
 };
 
-extern Grove_9DOF_Magnet TL_Magnet;
+extern Grove_IMU9_Magnet_LinkIt_One TL_Magnet;
 
 #endif
