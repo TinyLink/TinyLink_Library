@@ -1,1 +1,0 @@
-/home/freg/BBB/build/CMakeFiles/main.dir
