@@ -4,6 +4,7 @@
 
 Grove_Relay_Relay_Arduino_UNO::Grove_Relay_Relay_Arduino_UNO():stateSig(0){
 	pinMode(RELAY_DIGITAL_OUTPUT, OUTPUT);
+	digitalWrite(RELAY_DIGITAL_OUTPUT, LOW);
 }
 
 void Grove_Relay_Relay_Arduino_UNO::turnOn(){

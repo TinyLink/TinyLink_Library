@@ -18,8 +18,8 @@ class One_WiFi_WiFi_LinkIt_One{
 public:
 	One_WiFi_WiFi_LinkIt_One(){}
 	bool init();
-	bool join(const String& SSID, const String& PASSWD);
-	bool join(const char* SSID, const char* PASSWD);
+	bool join(const String& SSID="", const String& PASSWD="");
+	bool join(const char* SSID="", const char* PASSWD="");
 	bool disjoin();
 #ifdef TINYLINK_MQTT
 	TL_MQTT fetchMQTT();

@@ -22,6 +22,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/TL_HUMIDITY/DHT11/bbb_dht_read.cpp.o"
   "CMakeFiles/main.dir/TL_LIGHT/GROVE_LIGHT/Grove_Light_Light_BBB.cpp.o"
   "CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o"
+  "CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o"
   "CMakeFiles/main.dir/library/PWM.cpp.o"
   "CMakeFiles/main.dir/library/WMath.cpp.o"
   "CMakeFiles/main.dir/library/itoa.cpp.o"

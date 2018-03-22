@@ -578,9 +578,32 @@ CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o.provides: CMakeFi
 
 CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o.provides.build: CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o
 
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o: ../TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_24)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o"
+	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o -c /home/freg/BBB/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp
+
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i"
+	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/freg/BBB/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp > CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i
+
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s"
+	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/freg/BBB/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp -o CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s
+
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.requires:
+.PHONY : CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.requires
+
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.provides: CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.provides
+
+CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.provides.build: CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o
+
 CMakeFiles/main.dir/library/PWM.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/PWM.cpp.o: ../library/PWM.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/PWM.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/PWM.cpp.o -c /home/freg/BBB/library/PWM.cpp
 
@@ -603,7 +626,7 @@ CMakeFiles/main.dir/library/PWM.cpp.o.provides.build: CMakeFiles/main.dir/librar
 
 CMakeFiles/main.dir/library/WMath.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/WMath.cpp.o: ../library/WMath.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/WMath.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/WMath.cpp.o -c /home/freg/BBB/library/WMath.cpp
 
@@ -626,7 +649,7 @@ CMakeFiles/main.dir/library/WMath.cpp.o.provides.build: CMakeFiles/main.dir/libr
 
 CMakeFiles/main.dir/library/itoa.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/itoa.cpp.o: ../library/itoa.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_26)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/itoa.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/itoa.cpp.o -c /home/freg/BBB/library/itoa.cpp
 
@@ -649,7 +672,7 @@ CMakeFiles/main.dir/library/itoa.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/dtostrf.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/dtostrf.cpp.o: ../library/dtostrf.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_27)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/dtostrf.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/dtostrf.cpp.o -c /home/freg/BBB/library/dtostrf.cpp
 
@@ -672,7 +695,7 @@ CMakeFiles/main.dir/library/dtostrf.cpp.o.provides.build: CMakeFiles/main.dir/li
 
 CMakeFiles/main.dir/library/OVERLAY.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/OVERLAY.cpp.o: ../library/OVERLAY.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_28)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/OVERLAY.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/OVERLAY.cpp.o -c /home/freg/BBB/library/OVERLAY.cpp
 
@@ -695,7 +718,7 @@ CMakeFiles/main.dir/library/OVERLAY.cpp.o.provides.build: CMakeFiles/main.dir/li
 
 CMakeFiles/main.dir/library/PINS.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/PINS.cpp.o: ../library/PINS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_29)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/PINS.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/PINS.cpp.o -c /home/freg/BBB/library/PINS.cpp
 
@@ -718,7 +741,7 @@ CMakeFiles/main.dir/library/PINS.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/CLOCK.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/CLOCK.cpp.o: ../library/CLOCK.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_30)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/CLOCK.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/CLOCK.cpp.o -c /home/freg/BBB/library/CLOCK.cpp
 
@@ -741,7 +764,7 @@ CMakeFiles/main.dir/library/CLOCK.cpp.o.provides.build: CMakeFiles/main.dir/libr
 
 CMakeFiles/main.dir/library/MAIN.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/MAIN.cpp.o: ../library/MAIN.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_31)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/MAIN.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/MAIN.cpp.o -c /home/freg/BBB/library/MAIN.cpp
 
@@ -764,7 +787,7 @@ CMakeFiles/main.dir/library/MAIN.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/GPIO.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/GPIO.cpp.o: ../library/GPIO.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_32)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/GPIO.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/GPIO.cpp.o -c /home/freg/BBB/library/GPIO.cpp
 
@@ -787,7 +810,7 @@ CMakeFiles/main.dir/library/GPIO.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/UART.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/UART.cpp.o: ../library/UART.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_33)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/UART.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/UART.cpp.o -c /home/freg/BBB/library/UART.cpp
 
@@ -810,7 +833,7 @@ CMakeFiles/main.dir/library/UART.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/SPI.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/SPI.cpp.o: ../library/SPI.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_34)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/SPI.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/SPI.cpp.o -c /home/freg/BBB/library/SPI.cpp
 
@@ -833,7 +856,7 @@ CMakeFiles/main.dir/library/SPI.cpp.o.provides.build: CMakeFiles/main.dir/librar
 
 CMakeFiles/main.dir/library/Stream.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/Stream.cpp.o: ../library/Stream.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_35)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/Stream.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/Stream.cpp.o -c /home/freg/BBB/library/Stream.cpp
 
@@ -856,7 +879,7 @@ CMakeFiles/main.dir/library/Stream.cpp.o.provides.build: CMakeFiles/main.dir/lib
 
 CMakeFiles/main.dir/library/Print.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/Print.cpp.o: ../library/Print.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_36)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/Print.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/Print.cpp.o -c /home/freg/BBB/library/Print.cpp
 
@@ -879,7 +902,7 @@ CMakeFiles/main.dir/library/Print.cpp.o.provides.build: CMakeFiles/main.dir/libr
 
 CMakeFiles/main.dir/library/WString.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/WString.cpp.o: ../library/WString.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_37)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/WString.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/WString.cpp.o -c /home/freg/BBB/library/WString.cpp
 
@@ -902,7 +925,7 @@ CMakeFiles/main.dir/library/WString.cpp.o.provides.build: CMakeFiles/main.dir/li
 
 CMakeFiles/main.dir/library/Wire.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/Wire.cpp.o: ../library/Wire.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_38)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/Wire.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/Wire.cpp.o -c /home/freg/BBB/library/Wire.cpp
 
@@ -925,7 +948,7 @@ CMakeFiles/main.dir/library/Wire.cpp.o.provides.build: CMakeFiles/main.dir/libra
 
 CMakeFiles/main.dir/library/ADC.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/library/ADC.cpp.o: ../library/ADC.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_39)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/library/ADC.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/library/ADC.cpp.o -c /home/freg/BBB/library/ADC.cpp
 
@@ -948,7 +971,7 @@ CMakeFiles/main.dir/library/ADC.cpp.o.provides.build: CMakeFiles/main.dir/librar
 
 CMakeFiles/main.dir/TL_PM25/SDS018/SDS018_PM25_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_PM25/SDS018/SDS018_PM25_BBB.cpp.o: ../TL_PM25/SDS018/SDS018_PM25_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_40)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_PM25/SDS018/SDS018_PM25_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_PM25/SDS018/SDS018_PM25_BBB.cpp.o -c /home/freg/BBB/TL_PM25/SDS018/SDS018_PM25_BBB.cpp
 
@@ -971,7 +994,7 @@ CMakeFiles/main.dir/TL_PM25/SDS018/SDS018_PM25_BBB.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/main.dir/TL_PM10/SDS018/SDS018_PM10_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_PM10/SDS018/SDS018_PM10_BBB.cpp.o: ../TL_PM10/SDS018/SDS018_PM10_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_41)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_PM10/SDS018/SDS018_PM10_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_PM10/SDS018/SDS018_PM10_BBB.cpp.o -c /home/freg/BBB/TL_PM10/SDS018/SDS018_PM10_BBB.cpp
 
@@ -994,7 +1017,7 @@ CMakeFiles/main.dir/TL_PM10/SDS018/SDS018_PM10_BBB.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/main.dir/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp.o: ../TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_42)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp.o -c /home/freg/BBB/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp
 
@@ -1017,7 +1040,7 @@ CMakeFiles/main.dir/TL_WIFI/WIFI_USB/WiFi_USB_WiFi_BBB.cpp.o.provides.build: CMa
 
 CMakeFiles/main.dir/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp.o: ../TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_43)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp.o -c /home/freg/BBB/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp
 
@@ -1040,7 +1063,7 @@ CMakeFiles/main.dir/TL_WIFI/ESP8266/ESP8266_WiFi_BBB.cpp.o.provides.build: CMake
 
 CMakeFiles/main.dir/sketch.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/sketch.cpp.o: ../sketch.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_44)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/sketch.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/sketch.cpp.o -c /home/freg/BBB/sketch.cpp
 
@@ -1063,7 +1086,7 @@ CMakeFiles/main.dir/sketch.cpp.o.provides.build: CMakeFiles/main.dir/sketch.cpp.
 
 CMakeFiles/main.dir/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp.o: ../TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_45)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp.o -c /home/freg/BBB/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp
 
@@ -1086,7 +1109,7 @@ CMakeFiles/main.dir/TL_TIMER/BBB_TIMER/BBB_Timer_Timer_BBB.cpp.o.provides.build:
 
 CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o: ../TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o -c /home/freg/BBB/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp
 
@@ -1109,7 +1132,7 @@ CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o.provides.build: CMa
 
 CMakeFiles/main.dir/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp.o: ../TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_47)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp.o -c /home/freg/BBB/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp
 
@@ -1132,7 +1155,7 @@ CMakeFiles/main.dir/TL_TIME/BBB_TIME/BBB_Time_Time_BBB.cpp.o.provides.build: CMa
 
 CMakeFiles/main.dir/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp.o: ../TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_48)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_49)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp.o -c /home/freg/BBB/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp
 
@@ -1155,7 +1178,7 @@ CMakeFiles/main.dir/TL_TEMPERATURE/DHT22/DHT22_Temperature_BBB.cpp.o.provides.bu
 
 CMakeFiles/main.dir/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp.o: ../TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_49)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_50)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp.o -c /home/freg/BBB/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp
 
@@ -1178,7 +1201,7 @@ CMakeFiles/main.dir/TL_TEMPERATURE/DHT11/DHT11_Temperature_BBB.cpp.o.provides.bu
 
 CMakeFiles/main.dir/TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp.o: ../TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_50)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/freg/BBB/build/CMakeFiles $(CMAKE_PROGRESS_51)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp.o"
 	/home/freg/gcc-linaro-arm-linux-gnueabihf-4.8/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp.o -c /home/freg/BBB/TL_RELAY/GROVE_RELAY/Grove_Relay_Relay_BBB.cpp
 
@@ -1224,6 +1247,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/TL_HUMIDITY/DHT11/bbb_dht_read.cpp.o" \
 "CMakeFiles/main.dir/TL_LIGHT/GROVE_LIGHT/Grove_Light_Light_BBB.cpp.o" \
 "CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o" \
+"CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o" \
 "CMakeFiles/main.dir/library/PWM.cpp.o" \
 "CMakeFiles/main.dir/library/WMath.cpp.o" \
 "CMakeFiles/main.dir/library/itoa.cpp.o" \
@@ -1278,6 +1302,7 @@ main_EXTERNAL_OBJECTS =
 ../bin/main: CMakeFiles/main.dir/TL_HUMIDITY/DHT11/bbb_dht_read.cpp.o
 ../bin/main: CMakeFiles/main.dir/TL_LIGHT/GROVE_LIGHT/Grove_Light_Light_BBB.cpp.o
 ../bin/main: CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o
+../bin/main: CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o
 ../bin/main: CMakeFiles/main.dir/library/PWM.cpp.o
 ../bin/main: CMakeFiles/main.dir/library/WMath.cpp.o
 ../bin/main: CMakeFiles/main.dir/library/itoa.cpp.o
@@ -1337,6 +1362,7 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/TL_HUMIDITY/DHT11/common_dht_r
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/TL_HUMIDITY/DHT11/bbb_dht_read.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/TL_LIGHT/GROVE_LIGHT/Grove_Light_Light_BBB.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/TL_STORAGE/BBB_SD/BBB_SD_Storage_BBB.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/library/PWM.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/library/WMath.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/library/itoa.cpp.o.requires

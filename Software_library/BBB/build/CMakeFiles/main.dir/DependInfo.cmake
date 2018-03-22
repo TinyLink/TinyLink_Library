@@ -4,6 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/home/freg/BBB/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp" "/home/freg/BBB/build/CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o"
   "/home/freg/BBB/TL_GPS/U_BLOX/u_blox_GPS_BBB.cpp" "/home/freg/BBB/build/CMakeFiles/main.dir/TL_GPS/U_BLOX/u_blox_GPS_BBB.cpp.o"
   "/home/freg/BBB/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp" "/home/freg/BBB/build/CMakeFiles/main.dir/TL_HTTP/BBB_HTTP/BBB_HTTP_HTTP_BBB.cpp.o"
   "/home/freg/BBB/TL_HUMIDITY/DHT11/DHT11_Humidity_BBB.cpp" "/home/freg/BBB/build/CMakeFiles/main.dir/TL_HUMIDITY/DHT11/DHT11_Humidity_BBB.cpp.o"
@@ -74,6 +75,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../TL_HUMIDITY/DHT11"
   "../TL_LIGHT/GROVE_LIGHT"
   "../TL_STORAGE/BBB_SD"
+  "../TL_FILE/BBB_FILE"
   "../TinyLink"
   "../TL_SERIAL/BBB_SERIAL"
   "../TL_PM25/SDS018"

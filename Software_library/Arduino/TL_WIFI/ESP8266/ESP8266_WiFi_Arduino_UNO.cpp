@@ -30,6 +30,8 @@ bool ESP8266_WiFi_Arduino_UNO::join(String& SSID, String& PASSWD){
 
 bool ESP8266_WiFi_Arduino_UNO::join(char* SSID, char* PASSWD){
 	unsigned long start = millis();
+	char* _SSID = new char[strlen(SSID)+1];
+	char* _PASSWD = new char[strlen(PASSWD)+1];
 	while (status != WL_CONNECTED && millis() - start < 8000){
 		status = WiFi.begin(SSID, PASSWD);
 		delay(500);

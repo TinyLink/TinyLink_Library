@@ -28,7 +28,7 @@ int main()
   //initialize_loop();
   signal(SIGINT, StopProgram);
   
-  #ifdef TIMER
+  #ifdef TINYLINK_TIMER
   timer_initialize();
   #endif
 
@@ -51,7 +51,7 @@ int main()
     loop();
   }
   
-  #ifdef TIMER
+  #ifdef TINYLINK_TIMER
   timer_finalize();
   #endif
 

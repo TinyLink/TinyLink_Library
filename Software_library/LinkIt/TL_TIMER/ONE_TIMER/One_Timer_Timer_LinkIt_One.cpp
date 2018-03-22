@@ -35,6 +35,7 @@ void One_Timer_Timer_LinkIt_One::attachInterrupt(void (*callback)())
 
 void One_Timer_Timer_LinkIt_One::detachInterrupt()
 {
+  _callback = NULL;
   return;
 }
 

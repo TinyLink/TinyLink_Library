@@ -111,6 +111,30 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+TL_FILE/BBB_FILE/BBB_File_File_BBB.o: TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.o
+
+# target to build an object file
+TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.o
+
+TL_FILE/BBB_FILE/BBB_File_File_BBB.i: TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.i
+
+# target to preprocess a source file
+TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.i
+
+TL_FILE/BBB_FILE/BBB_File_File_BBB.s: TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.s
+
+# target to generate assembly for a file
+TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s
+.PHONY : TL_FILE/BBB_FILE/BBB_File_File_BBB.cpp.s
+
 TL_GPS/U_BLOX/u_blox_GPS_BBB.o: TL_GPS/U_BLOX/u_blox_GPS_BBB.cpp.o
 .PHONY : TL_GPS/U_BLOX/u_blox_GPS_BBB.o
 
@@ -1320,6 +1344,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
+	@echo "... TL_FILE/BBB_FILE/BBB_File_File_BBB.o"
+	@echo "... TL_FILE/BBB_FILE/BBB_File_File_BBB.i"
+	@echo "... TL_FILE/BBB_FILE/BBB_File_File_BBB.s"
 	@echo "... TL_GPS/U_BLOX/u_blox_GPS_BBB.o"
 	@echo "... TL_GPS/U_BLOX/u_blox_GPS_BBB.i"
 	@echo "... TL_GPS/U_BLOX/u_blox_GPS_BBB.s"
