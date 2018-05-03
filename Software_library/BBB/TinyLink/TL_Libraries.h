@@ -168,4 +168,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_BULB
+	#if PLATFORM == 3 && BOARD == 1005
+		#if TINYLINK_BULB == GROVE_CHAINABLE_RGB_BULB
+			#include "Grove_Chainable_RGB_Bulb_Bulb_BBB.h"
+		#endif
+	#endif
+#endif
+
 #endif

@@ -12,7 +12,7 @@
 //#include "Read_Stream.h"
 #include "TL_Config.h"
 using namespace std;
-
+/*
 class Grove_Sound_BBB : public ReadStream<double>
 {
 private:
@@ -31,7 +31,7 @@ public:
 		extern Grove_Sound_BBB TL_Sound;
 	#endif
 #endif
-
+*/
 
 #endif
 

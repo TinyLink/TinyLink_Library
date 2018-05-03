@@ -21,6 +21,7 @@
 
 #ifndef WCONSTANTS_H
 #define WCONSTANTS_H
+#include <stdint.h>
 /*
 // Wiring API version for libraries
 // this is passed in at compile-time

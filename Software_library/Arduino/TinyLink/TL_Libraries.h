@@ -159,4 +159,10 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_BULB
+	#if TINYLINK_BULB == GROVE_CHAINABLE_RGB_BULB
+		#include "Grove_Chainable_RGB_Bulb_Bulb_Arduino_UNO.h"
+	#endif
+#endif
+
 #endif

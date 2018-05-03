@@ -48,5 +48,7 @@
 // Light
 #define GROVE_LIGHT 3023
 
+// Bulb
+#define GROVE_CHAINABLE_RGB_BULB 3067
 
 #endif

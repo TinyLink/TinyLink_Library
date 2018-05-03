@@ -1,5 +1,5 @@
 #include "Grove_Sound_Sound_BBB.h"
-
+/*
 Grove_Sound_BBB::Grove_Sound_BBB(adcPin pin):ReadStream(0.0) {
 	Grove_Sound_Pin = pin;
 }
@@ -14,3 +14,4 @@ int Grove_Sound_BBB::readOnce() {
 		Grove_Sound_BBB TL_Sound(SOUND_ANALOG);
 	#endif
 #endif
+*/
