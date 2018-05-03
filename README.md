@@ -14,3 +14,16 @@
 **硬件无关**
 - 开发者无需学习底层硬件的相关知识，只需专注于物联网应用软件的开发
 - TinyLink系统会根据代码生成最合适的硬件配置，同时满足开发者的应用需求和硬件组件之间的兼容性要求。
+
+# TinyLink Library
+TinyLink软件库包括了目前支持的所有开发板和传感器，目录结构如下：
+|----------------------|:-----:|:-----:|:-----:|:----:|  
+|TinyLink library root |平台名称|功能名称|模块名称|源文件|
+**例如：**
+TinyLink Library   - Arduino      - TL_TEMPERATURE
+                  |              |
+                   - LinkIT ONE
+                  |
+                   - BeagleBone
+                  |
+                   - ...
