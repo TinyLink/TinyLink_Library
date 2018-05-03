@@ -19,5 +19,9 @@
 TinyLink软件库包括了目前支持的所有开发板和传感器，目录结构如下：
 
 |TinyLink library root |平台名称|功能名称|模块名称|源文件|
-|----------------------|:--------:|:--------:|:--------:|-------:|
-|TinyLink library root |Arduino|TL_TEMPERATURE|DHT11|DHT11_Temperature_Arduino_UNO.h DHT11_Temperature_Arduino_UNO.cpp|
+|----------------------|:--------:|:--------:|:--------:|:-------:|
+|lib|Arduino|TL_TEMPERATURE|DHT11|DHT11_Temperature_Arduino_UNO .h.cpp|  
+|lib|Arduino|TL_TEMPERATURE|Grove_Temperature|Grove_Temperature_Arduino_UNO .h.cpp|  
+|lib|Arduino|TL_LIGHT|Grove_Light|Grove_Light_Arduino_UNO .h.cpp|  
+|lib|BeagleBone|TL_WIFI|WIFI_USB|WiFi_USB_WiFi_BBB .h.cpp|  
+|...|...|...|...|...|  
