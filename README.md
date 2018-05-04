@@ -27,4 +27,3 @@ TinyLink软件库包括了目前支持的所有开发板和传感器，目录结
   
 |lib|Arduino|TL_TEMPERATURE|DHT11|DHT11_Temperature_Arduino_UNO .h.cpp|  
 |----------------------|:--------:|:--------:|:--------:|:-------:|  
-|TinyLink library root |平台名称|功能名称|模块名称|源文件|  
