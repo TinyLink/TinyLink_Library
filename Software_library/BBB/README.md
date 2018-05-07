@@ -1,11 +1,10 @@
 ## Step 1. Config environment
-Step 1. Setup cross compiling environment on Linux(x64). Add cross compiling tool chain path in ~/.bashrc  
-Step 2. Save and close ~/.bashrc. Run arm-none-eabi-g++ --version  
+Step 1. Setup cross compiling environment on Linux(x64). Modify CmakeLists.txt "SET(CMAKE_CXX_COMPILER "gcc-linaro-arm-linux-gnueabihf-4.8Path/bin/arm-linux-gnueabihf-g++")"    
 ## Step 2. Cross compiling
-Step 3. cd BBB && mkdir build  
-Step 4. cd build && cmake ..  
-Step 5. make  
+Step 2. cd BBB && mkdir build  
+Step 3. cd build && cmake ..  
+Step 4. make  
 ## Test & run
-Step 6. cd ../bin  
-Step 7. scp main username@ip:  
-Step 8. ssh to the mainboard. Then run ./main  
+Step 5. cd ../bin  
+Step 6. scp main username@ip:  
+Step 7. ssh to the mainboard. Then run ./main  
