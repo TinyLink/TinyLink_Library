@@ -11,7 +11,6 @@ public:
 	Grove_Chainable_RGB_Bulb_Bulb_BBB();
 	void turnOn();
 	void turnOff();
-	void toggle();
 	const int state();
 };
 #if TINYLINK_BULB == GROVE_CHAINABLE_RGB_BULB

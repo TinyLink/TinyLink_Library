@@ -11,7 +11,6 @@ public:
 	Grove_Chainable_RGB_Bulb_Bulb_Arduino_UNO();
 	void turnOn();
 	void turnOff();
-	void toggle();
 	const int state();
 };
 
