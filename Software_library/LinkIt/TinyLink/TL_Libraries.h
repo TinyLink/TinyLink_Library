@@ -67,6 +67,8 @@
 #ifdef TINYLINK_TEMPERATURE
 	#if TINYLINK_TEMPERATURE == DHT11
 		#include "DHT11_Temperature_LinkIt_One.h"
+	#elif TINYLINK_TEMPERATURE == GROVE_TEMPERATURE
+		#include "Grove_Temperature_Temperature_LinkIt_One.h"
 	#endif
 #endif
 
