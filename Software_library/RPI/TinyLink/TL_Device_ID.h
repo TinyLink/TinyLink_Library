@@ -17,7 +17,7 @@
 #define A2 16
 
 // LED
-#define OUTLED 2
+#define GROVE_LED 3069
 
 // Temperature and Humidity Sensor
 #define DHT11 3031

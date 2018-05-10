@@ -114,8 +114,8 @@
 
 #ifdef TINYLINK_LED
 	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_LED == OUTLED
-			#include "OUTLED_LED_RPI.h"
+		#if TINYLINK_LED == GROVE_LED
+			#include "Grove_LED_LED_RPI.h"
 		#endif
 	#endif
 #endif
