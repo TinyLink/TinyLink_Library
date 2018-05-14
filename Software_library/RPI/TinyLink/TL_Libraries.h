@@ -40,6 +40,8 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_TEMPERATURE == DHT11
 			#include "DHT11_Temperature_RPI.h"
+		#elif TINYLINK_TEMPERATURE == GROVE_TEMPERATURE
+			#include "Grove_Temperature_Temperature_RPI.h"
 		#endif
 	#endif
 #endif

@@ -23,7 +23,8 @@
 #define DHT11 3031
 #define DHT22 3032
 
-// HUmidity Sensor
+// Temperature
+#define GROVE_TEMPERATURE 3033
 
 // GPS Sensor
 #define U_BLOX 3018
