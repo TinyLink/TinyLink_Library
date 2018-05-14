@@ -74,4 +74,7 @@
 // Display
 #define GROVE_LCD_RGB 3063
 
+// Bulb
+#define GROVE_CHAINABLE_RGB_BULB 3067
+
 #endif
