@@ -1,34 +1,53 @@
 #include "Arduino.h"
 #include <string.h>
 
-char* ch_result;
 
 void setup() {
-
-//	TL_Display.connect();
-//	TL_Display.setRGB(0, 128, 64);
 }
+
+/*
+void loop() {
+	TL_LED.turnOn();
+	std::cout<<TL_LED.state()<<std::endl;
+	TL_Time.delayMillis(1000);
+	TL_LED.turnOff();
+	std::cout<<TL_LED.state()<<std::endl;
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
+void loop() {
+	TL_Bulb.turnOn();
+	std::cout<<TL_Bulb.state()<<std::endl;
+	TL_Time.delayMillis(2000);
+	TL_Bulb.turnOff();
+	std::cout<<TL_Bulb.state()<<std::endl;
+	TL_Time.delayMillis(2000);
+}
+*/
 
 void loop() {
-	
-	TL_Display.show("I am listening");
-
-	ch_result = TL_Voice.recognize(5);
-        printf("%s\n", ch_result);
-        if(strstr(ch_result, "ON")) {
-
-		TL_Display.show("LIGHT ON");
-                TL_Relay.turnOn();
-        }
-        else if (strstr(ch_result, "OFF")) {
-
-		TL_Display.show("LIGHT OFF");
-                TL_Relay.turnOff();
-        }
-	else
-	{
-		TL_Display.show("NOTHING!");
-	}
-	
-	TL_Time.delayMillis(3000);	
+	TL_Temperature.read();
+	TL_Humidity.read();
+	std::cout<<TL_Temperature.data()<<std::endl;
+	std::cout<<TL_Humidity.data()<<std::endl;
+	TL_Time.delayMillis(1000);
 }
+
+/*
+void loop(){
+	TL_Display.show("123");
+	TL_Time.delayMillis(1000);
+	TL_Display.show("345");
+	TL_Time.delayMillis(1000);
+	TL_Display.clear();
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
+void loop() {
+	TL_Light.read();
+	std::cout<<TL_Light.data()<<std::endl;
+	TL_Time.delayMillis(1000);
+}
+*/

@@ -20,8 +20,8 @@
 #define GROVE_LED 3069
 
 // Temperature and Humidity Sensor
-#define DHT11 3031
-#define DHT22 3032
+#define DHT11 3032
+#define DHT22 3031
 
 // Temperature
 #define GROVE_TEMPERATURE 3033

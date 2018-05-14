@@ -85,7 +85,7 @@ void Grove_Display_RPI::show(const char *str)
 	//this->setRGB(0, 128, 64);
         this->selectSlave(Grove_Display_RPI::DISPLAY_TEXT_ADDR);
 
-        //this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::CLEAR_DISPLAY);
+        this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::CLEAR_DISPLAY);
         delay(50);
         this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::DISPLAY_ON | Grove_Display_RPI::NO_CURSOR);
         this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::ENABLE_2ROWS);

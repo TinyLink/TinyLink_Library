@@ -64,7 +64,7 @@ int digitalWrite(int pin,int value);
 int pinMode(int pin,int mode);
 int digitalRead(int pin);
 int analogWrite(int pin,int value);
-pair<float, float> dht(int pin);
+pair<float, float> dht(int pin, int module);
 
 // this class purpose is to give a more meaningful
   // description of problem that's encountered

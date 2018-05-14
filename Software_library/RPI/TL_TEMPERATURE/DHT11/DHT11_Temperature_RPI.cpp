@@ -8,7 +8,7 @@ namespace tinylink {
 	    if (init_dev() == -1) exit(-1);
 	}	
 	int DHT11_TEMPERATURE::_read(){
-		pair<float, float> result = dht(_pin);
+		pair<float, float> result = dht(_pin, 0);
 		if(!isnan(result.first)){
 			_data = result.first; 
 		}

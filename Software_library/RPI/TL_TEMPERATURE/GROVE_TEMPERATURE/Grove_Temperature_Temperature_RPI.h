@@ -10,13 +10,14 @@
 namespace tinylink{
 	class Grove_Temperature_Temperature_RPI: public Sensor<double>{	
 	private:
+		int pin;
 		int _read();
 	public:
-		Grove_Temperature_Temperature_RPI();
+		Grove_Temperature_Temperature_RPI(int pin);
 	};
 }
-
-extern tinylink::Grove_Temperature_Temperature_RPI TL_Temperature;
-
+#if TINYLINK_TEMPERATURE == GROVE_TEMPERATURE
+	extern tinylink::Grove_Temperature_Temperature_RPI TL_Temperature;
+#endif
 #endif
 

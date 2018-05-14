@@ -25,4 +25,4 @@ namespace tinylink {
 	}
 }
 
-tinylink::Grove_Relay_RPI TL_Relay(RELAY_DIGITAL_INPUT);
+tinylink::Grove_Relay_RPI TL_Relay(RELAY_DIGITAL_OUTPUT);
