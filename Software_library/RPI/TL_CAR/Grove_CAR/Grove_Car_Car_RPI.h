@@ -24,7 +24,6 @@ namespace tinylink
           public:
 
                   Grove_Car_Car_RPI();//set i2c_slave address
-                  void connect();// set address to new i2c_client on raspberry i2c bus
 		
 	 	  void moveForward();
 		  void moveBack();

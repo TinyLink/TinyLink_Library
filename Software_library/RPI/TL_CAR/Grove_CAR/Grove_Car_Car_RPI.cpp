@@ -8,12 +8,10 @@ Grove_Car_Car_RPI::Grove_Car_Car_RPI()
 {
 	MOTOR_LEFT_ADDR = 0x65;  //set i2c slave address on raspberry i2c bus
 	MOTOR_RIGHT_ADDR = 0x60;	
-	this->connect(); //try connect.
-}
+	
+	this->DEVICE_FILE = initDevice(0x60);// set new i2c_client on raspberry, get file number;
+        this->stop();
 
-void Grove_Car_Car_RPI::connect()
-{
-        this->DEVICE_FILE = initDevice(0x60);// set new i2c_client on raspberry, get file number;
 }
 
 void Grove_Car_Car_RPI::moveForward(){
