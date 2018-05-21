@@ -164,4 +164,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_CAR
+        #if PLATFORM == 4 && BOARD == 1003
+                #if TINYLINK_CAR == GROVE_CAR
+                        #include "Grove_Car_Car_RPI.h"
+                #endif
+        #endif
+#endif
+
 #endif

@@ -78,4 +78,7 @@
 // Bulb
 #define GROVE_CHAINABLE_RGB_BULB 3067
 
+//Car
+#define GROVE_CAR 3068
+
 #endif

@@ -1,53 +1,40 @@
-#include "Arduino.h"
-#include <string.h>
 
+#include "TL_Libraries.h"
 
+double x,y,z;
 void setup() {
+	
 }
 
-/*
 void loop() {
-	TL_LED.turnOn();
-	std::cout<<TL_LED.state()<<std::endl;
-	TL_Time.delayMillis(1000);
-	TL_LED.turnOff();
-	std::cout<<TL_LED.state()<<std::endl;
-	TL_Time.delayMillis(1000);
-}
-*/
-/*
-void loop() {
-	TL_Bulb.turnOn();
-	std::cout<<TL_Bulb.state()<<std::endl;
-	TL_Time.delayMillis(2000);
-	TL_Bulb.turnOff();
-	std::cout<<TL_Bulb.state()<<std::endl;
-	TL_Time.delayMillis(2000);
-}
-*/
-
-void loop() {
-	TL_Temperature.read();
-	TL_Humidity.read();
-	std::cout<<TL_Temperature.data()<<std::endl;
-	std::cout<<TL_Humidity.data()<<std::endl;
-	TL_Time.delayMillis(1000);
-}
-
-/*
-void loop(){
-	TL_Display.show("123");
-	TL_Time.delayMillis(1000);
-	TL_Display.show("345");
-	TL_Time.delayMillis(1000);
 	TL_Display.clear();
-	TL_Time.delayMillis(1000);
+	TL_Display.show("Forward!\n");
+
+	std::cout<<"Forward"<<endl;	
+	TL_Car.moveForward();
+	TL_Time.delayMillis(3000);
+	TL_Car.stop();
+	TL_Time.delayMillis(2000);
+
+	TL_Display.clear();
+        TL_Display.show("Back\n!");
+
+	std::cout<<"Back"<<endl;
+        TL_Car.moveBack();
+        TL_Time.delayMillis(3000);
+        TL_Car.stop();
+        TL_Time.delayMillis(2000);
+
+        std::cout<<"turnLeft"<<endl;
+        TL_Car.turnLeft();
+        TL_Time.delayMillis(3000);
+        TL_Car.stop();
+	TL_Time.delayMillis(2000);
+
+	std::cout<<"turnRigth"<<endl;
+        TL_Car.turnRight();
+        TL_Time.delayMillis(3000);
+        TL_Car.stop();
+        TL_Time.delayMillis(2000);
+	
 }
-*/
-/*
-void loop() {
-	TL_Light.read();
-	std::cout<<TL_Light.data()<<std::endl;
-	TL_Time.delayMillis(1000);
-}
-*/
