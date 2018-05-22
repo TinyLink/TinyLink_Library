@@ -78,11 +78,9 @@ boolean DHT_Lib::read(void) {
 	if (currenttime < _lastreadtime) {
 		_lastreadtime = 0;
 	}
-/*	14:12
 	if (!firstreading && ((currenttime - _lastreadtime) < 2000)) {
 		return true; // return last correct measurement
 	}
-*/
 	firstreading = false;
 	_lastreadtime = millis();
 	data[0] = data[1] = data[2] = data[3] = data[4] = 0;

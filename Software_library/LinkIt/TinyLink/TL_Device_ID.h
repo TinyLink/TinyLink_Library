@@ -16,8 +16,10 @@
 
 #define DUAL_BLE 3016
 #define GROVE_LIGHT 3023
+#define DHT22 3031
 #define DHT11 3032
 #define GROVE_TEMPERATURE 3033
+#define TH02 3034
 #define SDS018 3035
 #define GROVE_IMU9 3048
 #define ESP8266 3052
