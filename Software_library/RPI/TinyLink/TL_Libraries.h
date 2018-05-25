@@ -172,4 +172,12 @@
         #endif
 #endif
 
+#ifdef TINYLINK_TCP
+        #if PLATFORM == 4 && BOARD == 1003
+                #if TINYLINK_TCP == RPI_TCP
+                        #include "RPI_TCP_TCP_RPI.h"
+                #endif
+        #endif
+#endif
+
 #endif

@@ -1,40 +1,42 @@
 
 #include "TL_Libraries.h"
 
-double x,y,z;
-void setup() {
-	
+TL_TCP client;
+TL_TCP server = TL_WiFi.fetchTCP();
+void setup(){
+	server.init(0, 8888, "192.168.199.197");
+}
+void loop(){
+	if(client.isConnected()){
+                char message[50];
+		memset(message, 0, sizeof(message));
+		client.read(message, 50);
+		std::cout<<message<<"that's message"<<endl;
+
+                if(strcmp(message,"forward")==0){
+			TL_Car.moveForward();
+			std::cout<<message<<endl;
+                }else if(strcmp( message,"back")==0){
+			TL_Car.moveBack();
+			std::cout<<message<<endl;
+		}else if(strcmp( message,"left")==0){
+			TL_Car.turnLeft();
+			std::cout<<message<<endl;
+		}else if(strcmp( message,"right")==0){
+			TL_Car.turnRight();
+			std::cout<<message<<endl;
+		}else if(strcmp( message,"stop")==0){
+                        TL_Car.stop();
+			std::cout<<message<<endl;
+                }
+		client.Close();
+                        client.Close();
+	}
+	else
+	{
+	std::cout<<"reconnect"<<endl;
+	client = server.Accept();
+	}
 }
 
-void loop() {
-	TL_Display.clear();
-	TL_Display.show("Forward!\n");
-
-	std::cout<<"Forward"<<endl;	
-	TL_Car.moveForward();
-	TL_Time.delayMillis(3000);
-	TL_Car.stop();
-	TL_Time.delayMillis(2000);
-
-	TL_Display.clear();
-        TL_Display.show("Back\n!");
-
-	std::cout<<"Back"<<endl;
-        TL_Car.moveBack();
-        TL_Time.delayMillis(3000);
-        TL_Car.stop();
-        TL_Time.delayMillis(2000);
-
-        std::cout<<"turnLeft"<<endl;
-        TL_Car.turnLeft();
-        TL_Time.delayMillis(3000);
-        TL_Car.stop();
-	TL_Time.delayMillis(2000);
-
-	std::cout<<"turnRigth"<<endl;
-        TL_Car.turnRight();
-        TL_Time.delayMillis(3000);
-        TL_Car.stop();
-        TL_Time.delayMillis(2000);
 	
-}

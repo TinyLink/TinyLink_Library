@@ -10,8 +10,7 @@ Grove_Car_Car_RPI::Grove_Car_Car_RPI()
 	MOTOR_RIGHT_ADDR = 0x60;	
 	
 	this->DEVICE_FILE = initDevice(0x60);// set new i2c_client on raspberry, get file number;
-        this->stop();
-
+	this->stop();
 }
 
 void Grove_Car_Car_RPI::moveForward(){
@@ -30,13 +29,13 @@ void Grove_Car_Car_RPI::stop(){
 }
 
 void Grove_Car_Car_RPI::turnLeft(){
-	this->Left_Motor(0);
+	this->Left_Motor(-100);
 	this->Right_Motor(100);
 }
 
 void Grove_Car_Car_RPI::turnRight(){
 	this->Left_Motor(100);
-	this->Right_Motor(0);
+	this->Right_Motor(-100);
 }
 
 /*
