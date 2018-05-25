@@ -95,6 +95,8 @@
 #ifdef TINYLINK_LIGHT
 	#if TINYLINK_LIGHT == GROVE_LIGHT
 		#include "Grove_Light_Light_Arduino_UNO.h"
+	#elif TINYLINK_LIGHT == GROVE_DIGITAL_LIGHT
+		#include "Grove_Digital_Light_Light_Arduino_UNO.h"
 	#endif
 #endif
 
