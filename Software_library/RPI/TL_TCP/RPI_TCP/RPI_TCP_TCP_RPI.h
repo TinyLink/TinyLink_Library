@@ -11,7 +11,7 @@
 #include <fcntl.h>
 #include <sys/shm.h>
 #include <iostream>
-
+#include "WString.h"
 namespace tinylink {
 	class TL_TCP
 	{
@@ -20,8 +20,8 @@ namespace tinylink {
 			bool init(int type);
 			TL_TCP Accept();
 			bool Connect(const char* ip, int port);
-			int write(const char* message);
-			int read(char *buffer, int len);
+			bool write(String message);
+			String read();
 			int Close();
 			bool isConnected();
 			int conn_state=0;

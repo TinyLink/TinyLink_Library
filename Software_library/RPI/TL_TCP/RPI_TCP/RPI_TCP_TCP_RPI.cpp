@@ -1,10 +1,5 @@
 #include"RPI_TCP_TCP_RPI.h"
-#include<stdio.h>  
-#include<sys/types.h>  
-#include<sys/socket.h>  
-#include<stdlib.h>  
-#include<netinet/in.h>  
-#include<arpa/inet.h>
+
 
 namespace tinylink {
 	bool TL_TCP::init(int type, int port, const char* ip)
@@ -99,14 +94,18 @@ namespace tinylink {
 				return true;
 				}	
 			}
-	int TL_TCP::write(const char* message)
+	bool TL_TCP::write(String message)
 		{
-		   return send(fd, message, strlen(message), 0);
+		   return send(fd, message.c_str(), message.length(), 0);
 		}
 
-	int TL_TCP::read(char *buffer, int len)
+	String TL_TCP::read()
 		{
-		   return recv(fd, buffer, len, 0);
+		   char buffer[1024];
+		   int len = recv(fd, buffer, 1024, 0);
+		   buffer[len] = 0;
+		   String mesg(buffer);
+		   return mesg;
 		}
 
 	int TL_TCP::Close()
