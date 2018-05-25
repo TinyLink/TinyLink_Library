@@ -8,24 +8,23 @@ void setup(){
 }
 void loop(){
 	if(client.isConnected()){
-                char message[50];
-		memset(message, 0, sizeof(message));
-		client.read(message, 50);
+                String message;
+		message = client.read();
 		std::cout<<message<<"that's message"<<endl;
 
-                if(strcmp(message,"forward")==0){
+                if(message=="forward"){
 			TL_Car.moveForward();
 			std::cout<<message<<endl;
-                }else if(strcmp( message,"back")==0){
+                }else if(message=="back"){
 			TL_Car.moveBack();
 			std::cout<<message<<endl;
-		}else if(strcmp( message,"left")==0){
+		}else if(message=="left"){
 			TL_Car.turnLeft();
 			std::cout<<message<<endl;
-		}else if(strcmp( message,"right")==0){
+		}else if(message=="right"){
 			TL_Car.turnRight();
 			std::cout<<message<<endl;
-		}else if(strcmp( message,"stop")==0){
+		}else if(message=="stop"){
                         TL_Car.stop();
 			std::cout<<message<<endl;
                 }
