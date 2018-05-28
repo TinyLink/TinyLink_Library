@@ -12,29 +12,28 @@
 #include <sys/shm.h>
 #include <iostream>
 #include "WString.h"
+
 namespace tinylink {
 	class TL_TCP
 	{
 		public:
-			bool init(int type, int port, const char* ip);
-			bool init(int type);
+			bool init(int type, const char* ip, int port);
 			TL_TCP Accept();
-			bool Connect(const char* ip, int port);
-			bool write(String message);
-			String read();
+			int Connect(const char* ip, int port);
+			ssize_t write(const String* message);
+			ssize_t read(String* message);
 			int Close();
-			bool isConnected();
-			int conn_state=0;
+			operator bool();
 		private:
 			bool init(int type, int socket_fd);
-			int fd;
-			int _type;
+			int fd=-1;
+			int _type=-1;
 			struct sockaddr_in server_addr;
 			struct sockaddr_in client_addr;			
 			int queue=5;
 	};
 }
 
+
 typedef tinylink::TL_TCP TL_TCP;
 #endif
-
