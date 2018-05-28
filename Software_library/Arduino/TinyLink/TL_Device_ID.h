@@ -11,6 +11,7 @@
 
 #define SD_SHIELD 2003
 
+#define GROVE_DIGITAL_LIGHT 3001
 #define DUAL_BLE 3016
 #define GROVE_LIGHT 3023
 #define DHT22 3031
