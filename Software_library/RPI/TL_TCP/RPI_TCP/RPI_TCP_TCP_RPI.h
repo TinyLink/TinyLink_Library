@@ -17,20 +17,19 @@ namespace tinylink {
 	class TL_TCP
 	{
 		public:
-			bool init(int type, const char* ip, int port);
+			TL_TCP();			
+			bool Init(int type, const char* ip="", int port=0);
 			TL_TCP Accept();
 			int Connect(const char* ip, int port);
-			ssize_t write(const String* message);
-			ssize_t read(String* message);
+			ssize_t Write(const String& message);
+			ssize_t Read(String& message);
 			int Close();
 			operator bool();
+	
 		private:
-			bool init(int type, int socket_fd);
-			int fd=-1;
-			int _type=-1;
-			struct sockaddr_in server_addr;
-			struct sockaddr_in client_addr;			
-			int queue=5;
+			bool Init(int type, int socket_fd);
+			int fd;
+			int _type;			
 	};
 }
 
