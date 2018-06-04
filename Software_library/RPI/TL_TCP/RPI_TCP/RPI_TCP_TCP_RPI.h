@@ -18,16 +18,16 @@ namespace tinylink {
 	{
 		public:
 			TL_TCP();			
-			bool Init(int type, const char* ip="", int port=0);
-			TL_TCP Accept();
-			int Connect(const char* ip, int port);
-			ssize_t Write(const String& message);
-			ssize_t Read(String& message);
-			int Close();
+			bool init(int type, const char* ip="", int port=0);
+			TL_TCP accept();
+			int connect(const char* ip, int port);
+			ssize_t write(const String& message);
+			ssize_t read(String& message);
+			int close();
 			operator bool();
 	
 		private:
-			bool Init(int type, int socket_fd);
+			bool init(int type, int socket_fd);
 			int fd;
 			int _type;			
 	};

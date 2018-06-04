@@ -1,11 +1,14 @@
 #include"RPI_TCP_TCP_RPI.h"
 
 
+
 namespace tinylink {
 	    TL_TCP::TL_TCP(void):_type(-1),fd(-1){}
 
-	bool TL_TCP::Init(int type, const char* ip, int port)
+	bool TL_TCP::init(int type, const char* ip, int port)
 		{	
+		   if(type!=0&&type!=1)
+		   return false;
 		   _type = type;
 		   struct sockaddr_in server_addr;
 		   struct sockaddr_in client_addr;
@@ -26,17 +29,17 @@ namespace tinylink {
                         		server_addr.sin_addr.s_addr = inet_addr(ip);//set server ip
 
                         		if(bind(fd, (struct sockaddr*)&server_addr, sizeof(server_addr))==-1){
-                                		std::cout<<"tcp server bind fault"<<std::endl;
+                                	//	std::cout<<"tcp server bind fault"<<endl;
                                 		return false;
                         			}
                         		if(listen(fd, queue)==-1){
-                                		std::cout<<"tcp server listen fault"<<std::endl;
+                                	//	std::cout<<"tcp server listen fault"<<endl;
                                 		return false;
                         			}
                         		return true;
 					}
 				else{
-					std::cout<<"please set a port for server"<<endl;
+					//	std::cout<<"please set a port for server"<<endl;
 		                        return false;
 					}
 			case 1:
@@ -51,7 +54,7 @@ namespace tinylink {
 	                        client_addr.sin_addr.s_addr = inet_addr(ip);//set client ip
 
 	                        if(bind(fd, (struct sockaddr*)&client_addr, sizeof(client_addr))==-1){
-	                                std::cout<<"tcp client bind fault"<<std::endl;
+	                               //	std::cout<<"tcp client bind fault"<<endl;
 	                                return false;
 	                        	}
 	
@@ -62,7 +65,7 @@ namespace tinylink {
 			}
 		}
 
-	bool TL_TCP::Init(int type, int socket_fd)
+	bool TL_TCP::init(int type, int socket_fd)
 		{
 		  _type = type;
 		  
@@ -73,31 +76,32 @@ namespace tinylink {
  		  return true;
 		}
 
-	TL_TCP	TL_TCP::Accept()
+	TL_TCP	TL_TCP::accept()
 			{
 			   int connect_fd;
 			   TL_TCP conn_sock;
 			   struct sockaddr_in client_addr;
+
 			   if(_type!=0){
-			  	 std::cout<<"only server type can accept!"<<endl;
+			  //	std::cout<<"only server type can accept!"<<endl;
 			   	connect_fd = -1;
 			   }
 			   else{
 			   	unsigned int len = sizeof(client_addr);
-			   	connect_fd=accept(fd, (struct sockaddr*)&client_addr, &len);
+			   	connect_fd=::accept(fd, (struct sockaddr*)&client_addr, &len);
 			   }
 
-			   conn_sock.Init(2,connect_fd);
+			   conn_sock.init(2,connect_fd);
 
 			   return conn_sock;
 			}
 
-	int TL_TCP::Connect(const char* ip, int port)
+	int TL_TCP::connect(const char* ip, int port)
 			{
 			   struct sockaddr_in server_addr;
 
 			   if(_type!=1){
-			   	//std::cout<<"only client type could connect!"<<endl;
+			   //	std::cout<<"only client type could connect!"<<endl;
 				return -1;
 			   }
 
@@ -108,10 +112,10 @@ namespace tinylink {
         	           server_addr.sin_port = htons(port);  //set connect server port
                 	   server_addr.sin_addr.s_addr = inet_addr(ip);//set connect server ip like"192.168.199.197"
 
-			   return connect(fd, (struct sockaddr *)&server_addr, len);
+			   return ::connect(fd, (struct sockaddr *)&server_addr, len);
 			}
 
-	ssize_t TL_TCP::Write(const String& message)
+	ssize_t TL_TCP::write(const String& message)
 		{
 		   if(_type==1||_type==2&&fd>0)
 		   return send(fd, message.c_str(), message.length(), 0);
@@ -119,7 +123,7 @@ namespace tinylink {
 		   return -1;
 		}
 
-	ssize_t TL_TCP::Read(String& message)
+	ssize_t TL_TCP::read(String& message)
 		{
 		   if(_type==1||_type==2&&fd>0)
                    {
@@ -133,9 +137,9 @@ namespace tinylink {
 		   return -1;
 		}
 
-	int TL_TCP::Close()
+	int TL_TCP::close()
 		{
-		   if(close(fd)==0){
+		   if(::close(fd)==0){
 		  	fd=-1;
 			_type=-1;
 			return 0;
