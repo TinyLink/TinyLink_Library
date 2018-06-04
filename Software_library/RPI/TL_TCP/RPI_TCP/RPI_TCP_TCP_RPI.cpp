@@ -79,13 +79,14 @@ namespace tinylink {
 
 	TL_TCP	TL_TCP::accept()
 			{
+			   int connect_fd;
+			   TL_TCP conn_sock;
+
 			   if(_type!=0){
 			  //	std::cout<<"only server type can accept!"<<endl;
 			   	connect_fd = -1;
 			   }
 			   else{
-				int connect_fd;
-                           	TL_TCP conn_sock;
                            	struct sockaddr_in client_addr;
 			   	unsigned int len = sizeof(client_addr);
 			   	connect_fd=::accept(fd, (struct sockaddr*)&client_addr, &len);
