@@ -7,8 +7,9 @@ namespace tinylink {
 
 	bool TL_TCP::init(int type, const char* ip, int port)
 		{	
-		   if(type!=0&&type!=1)
-		   return false;
+		   if(_type!=-1)	//can not repeated initialization
+			return false;
+
 		   _type = type;
 		   struct sockaddr_in server_addr;
 		   struct sockaddr_in client_addr;
@@ -78,15 +79,14 @@ namespace tinylink {
 
 	TL_TCP	TL_TCP::accept()
 			{
-			   int connect_fd;
-			   TL_TCP conn_sock;
-			   struct sockaddr_in client_addr;
-
 			   if(_type!=0){
 			  //	std::cout<<"only server type can accept!"<<endl;
 			   	connect_fd = -1;
 			   }
 			   else{
+				int connect_fd;
+                           	TL_TCP conn_sock;
+                           	struct sockaddr_in client_addr;
 			   	unsigned int len = sizeof(client_addr);
 			   	connect_fd=::accept(fd, (struct sockaddr*)&client_addr, &len);
 			   }
@@ -98,13 +98,12 @@ namespace tinylink {
 
 	int TL_TCP::connect(const char* ip, int port)
 			{
-			   struct sockaddr_in server_addr;
-
 			   if(_type!=1){
 			   //	std::cout<<"only client type could connect!"<<endl;
 				return -1;
 			   }
 
+			   struct sockaddr_in server_addr;
 			   memset(&server_addr, 0, sizeof(server_addr));
 	                   unsigned int len = sizeof(server_addr);
 				
@@ -147,11 +146,12 @@ namespace tinylink {
 		   else
 		   return -1;
 		}
-	TL_TCP::operator bool(){
-                          if(fd<0)
-                          return false;
-                          else
-                          return true;
-                        }
+	TL_TCP::operator bool()
+		{
+		   if(fd<0)
+		   return false;
+		   else
+		   return true;
+		}
 
 }
