@@ -59,6 +59,7 @@
 
 // Soil_Humidity
 #define SOIL_MOSITURE_ANALOG 3054
+#define SOIL_HUMIDITY 3056
 
 // Light
 #define GROVE_LIGHT 3023

@@ -66,6 +66,14 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_SOIL_HUMIDITY
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_SOIL_HUMIDITY == SOIL_HUMIDITY
+			#include "Soil_Humidity_Soil_Humidity_RPI.h"
+		#endif
+	#endif
+#endif
+
 #ifdef TINYLINK_GPS
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_GPS == U_BLOX
