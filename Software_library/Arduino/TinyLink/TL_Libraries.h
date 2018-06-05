@@ -103,6 +103,8 @@
 #ifdef TINYLINK_SOIL_HUMIDITY
 	#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
 		#include "Soil_Moisture_Analog_Soil_Humidity_Arduino_UNO.h"
+	#elif TINYLINK_SOIL_HUMIDITY == GROVE_MOISTURE
+		#include "Grove_Moisture_Soil_Humidity_Arduino_UNO.h"
 	#endif
 #endif
 

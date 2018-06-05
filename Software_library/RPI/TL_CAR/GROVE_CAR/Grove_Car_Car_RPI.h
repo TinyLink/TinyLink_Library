@@ -1,5 +1,5 @@
-#ifndef GROVE_DC_MOTOR_MOTOR_RPI_H
-#define GROVE_DC_MOTOR_MOTOR_RPI_H
+#ifndef GROVE_CAR_CAR_RPI_H
+#define GROVE_CAR_CAR_RPI_H
 
 #include <stdio.h>
 #include <stdlib.h>

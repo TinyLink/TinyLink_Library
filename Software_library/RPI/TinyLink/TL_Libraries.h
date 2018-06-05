@@ -62,14 +62,8 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
 			#include "Soil_Moisture_Analog_Soil_Humidity_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_SOIL_HUMIDITY
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_SOIL_HUMIDITY == SOIL_HUMIDITY
-			#include "Soil_Humidity_Soil_Humidity_RPI.h"
+		#elif TINYLINK_SOIL_HUMIDITY == GROVE_MOISTURE
+			#include "Grove_Moisture_Soil_Humidity_RPI.h"
 		#endif
 	#endif
 #endif
@@ -90,6 +84,14 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_WIFI == WIFI_USB
 			#include "WiFi_USB_WiFi_RPI.h"
+		#endif
+	#endif
+#endif
+
+#ifdef TINYLINK_TCP
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_TCP == RPI_TCP
+			#include "RPI_TCP_TCP_RPI.h"
 		#endif
 	#endif
 #endif
@@ -173,19 +175,11 @@
 #endif
 
 #ifdef TINYLINK_CAR
-        #if PLATFORM == 4 && BOARD == 1003
-                #if TINYLINK_CAR == GROVE_CAR
-                        #include "Grove_Car_Car_RPI.h"
-                #endif
-        #endif
-#endif
-
-#ifdef TINYLINK_TCP
-        #if PLATFORM == 4 && BOARD == 1003
-                #if TINYLINK_TCP == RPI_TCP
-                        #include "RPI_TCP_TCP_RPI.h"
-                #endif
-        #endif
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_CAR == GROVE_CAR
+			#include "Grove_Car_Car_RPI.h"
+		#endif
+	#endif
 #endif
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef TL_SOIL_HUMIDITY
-#define TL_SOIL_HUMIDITY
+#ifndef SOIL_MOISTURE_ANALOG_SOIL_HUMIDITY_RPI_H
+#define SOIL_MOISTURE_ANALOG_SOIL_HUMIDITY_RPI_H
 
 #include "Sensor_template.h"
 
@@ -17,6 +17,7 @@ namespace tinylink {
     };
 }
 
-
-extern tinylink::Soil_Moisture_Analog_Soil_Humidity TL_Soil_Humidity;
+#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
+	extern tinylink::Soil_Moisture_Analog_Soil_Humidity TL_Soil_Humidity;
+#endif
 #endif

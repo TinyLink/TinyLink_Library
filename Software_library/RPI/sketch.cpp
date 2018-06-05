@@ -1,41 +1,72 @@
+#include "Arduino.h"
+#include <string.h>
 
-#include "TL_Libraries.h"
 
-TL_TCP client;
-TL_TCP server = TL_WiFi.fetchTCP();
-void setup(){
-	server.init(0, 8888, "192.168.199.197");
+void setup() {
 }
+
+/*
+void loop() {
+	TL_LED.turnOn();
+	std::cout<<TL_LED.state()<<std::endl;
+	TL_Time.delayMillis(1000);
+	TL_LED.turnOff();
+	std::cout<<TL_LED.state()<<std::endl;
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
+void loop() {
+	TL_Bulb.turnOn();
+	std::cout<<TL_Bulb.state()<<std::endl;
+	TL_Time.delayMillis(2000);
+	TL_Bulb.turnOff();
+	std::cout<<TL_Bulb.state()<<std::endl;
+	TL_Time.delayMillis(2000);
+}
+*/
+/*
+void loop() {
+	TL_Temperature.read();
+	TL_Humidity.read();
+	std::cout<<TL_Temperature.data()<<std::endl;
+	std::cout<<TL_Humidity.data()<<std::endl;
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
 void loop(){
-	if(client.isConnected()){
-                String message;
-		message = client.read();
-		std::cout<<message<<"that's message"<<endl;
-
-                if(message=="forward"){
-			TL_Car.moveForward();
-			std::cout<<message<<endl;
-                }else if(message=="back"){
-			TL_Car.moveBack();
-			std::cout<<message<<endl;
-		}else if(message=="left"){
-			TL_Car.turnLeft();
-			std::cout<<message<<endl;
-		}else if(message=="right"){
-			TL_Car.turnRight();
-			std::cout<<message<<endl;
-		}else if(message=="stop"){
-                        TL_Car.stop();
-			std::cout<<message<<endl;
-                }
-		client.Close();
-                        client.Close();
-	}
-	else
-	{
-	std::cout<<"reconnect"<<endl;
-	client = server.Accept();
-	}
+	TL_Car.moveForward();
+	TL_Time.delayMillis(1000);
+	TL_Car.moveBack();
+	TL_Time.delayMillis(1000);
+	TL_Car.turnLeft();
+	TL_Time.delayMillis(1000);
+	TL_Car.turnRight();
+	TL_Time.delayMillis(1000);
+	TL_Car.stop();
+	TL_Time.delayMillis(1000);
 }
-
-	
+*/
+void loop(){
+	TL_Soil_Humidity.read();
+	cout<<TL_Soil_Humidity.data()<<endl;
+	TL_Time.delayMillis(1000);
+}
+/*
+void loop(){
+	TL_Display.show("123");
+	TL_Time.delayMillis(1000);
+	TL_Display.show("345");
+	TL_Time.delayMillis(1000);
+	TL_Display.clear();
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
+void loop() {
+	TL_Light.read();
+	std::cout<<TL_Light.data()<<std::endl;
+	TL_Time.delayMillis(1000);
+}
+*/

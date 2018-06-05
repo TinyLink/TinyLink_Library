@@ -51,6 +51,9 @@
 #define WIFI_USB 3010
 #define ESP8266 3037
 
+// TCP
+#define RPI_TCP 1003
+
 // MQTT
 #define RPI_MQTT 1003
 
@@ -59,7 +62,7 @@
 
 // Soil_Humidity
 #define SOIL_MOSITURE_ANALOG 3054
-#define SOIL_HUMIDITY 3056
+#define GROVE_MOISTURE 3056
 
 // Light
 #define GROVE_LIGHT 3023
@@ -79,7 +82,7 @@
 // Bulb
 #define GROVE_CHAINABLE_RGB_BULB 3067
 
-//Car
+// Car
 #define GROVE_CAR 3068
 
 #endif
