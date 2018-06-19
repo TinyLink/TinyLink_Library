@@ -179,4 +179,10 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_HCHO
+	#if TINYLINK_HCHO == GROVE_HCHO
+		#include "Grove_HCHO_HCHO_Arduino_UNO.h"
+	#endif
+#endif
+
 #endif
