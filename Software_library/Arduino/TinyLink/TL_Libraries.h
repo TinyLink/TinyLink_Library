@@ -59,6 +59,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_LORA
+	#if TINYLINK_LORA == LORA_SHIELD
+		#include "LORA_Shield_LORA_Arduino_UNO.h"
+	#endif
+#endif
+
 #ifdef TINYLINK_GPRS
 	// not available
 #endif
