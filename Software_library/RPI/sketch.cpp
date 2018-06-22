@@ -48,11 +48,13 @@ void loop(){
 	TL_Time.delayMillis(1000);
 }
 */
+/*
 void loop(){
 	TL_Soil_Humidity.read();
 	cout<<TL_Soil_Humidity.data()<<endl;
 	TL_Time.delayMillis(1000);
 }
+*/
 /*
 void loop(){
 	TL_Display.show("123");
@@ -70,3 +72,11 @@ void loop() {
 	TL_Time.delayMillis(1000);
 }
 */
+void loop(){
+        double data;
+        TL_HCHO.read();
+        data=TL_HCHO.data();
+        std::cout<<data<<endl;
+        TL_Time.delayMillis(1000);
+}
+

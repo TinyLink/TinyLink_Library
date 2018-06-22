@@ -85,4 +85,7 @@
 // Car
 #define GROVE_CAR 3068
 
+// HCHO
+#define GROVE_HCHO 3053
+
 #endif

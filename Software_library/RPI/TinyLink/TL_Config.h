@@ -80,4 +80,8 @@
 // Car
 #define TINYLINK_CAR GROVE_CAR
 
+// HCHO
+#define TINYLINK_HCHO GROVE_HCHO
+#define HCHO_ANALOG A0
+
 #endif
