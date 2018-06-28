@@ -19,7 +19,7 @@
 		  
 		  private:
 		  MiniMoto motor0; 
-    	  MiniMoto motor1;
+		  MiniMoto motor1;
      
   };
 

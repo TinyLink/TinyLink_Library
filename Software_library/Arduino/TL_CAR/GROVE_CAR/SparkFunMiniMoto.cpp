@@ -56,26 +56,14 @@ void MiniMoto::drive(int speed)
   if (regValue > 63) regValue = 63; // Cap the value at 63.
   regValue = regValue<<2;           // Left shift to make room for bits 1:0
   if (speed < 0) regValue |= 0x01;  // Set bits 1:0 based on sign of input.
+  else if (speed == 0) regValue |= 0x03;
   else           regValue |= 0x02;
   
   I2CWriteBytes(0x00, &regValue, 1);  
 }
 
 // Coast to a stop by hi-z'ing the drivers.
-void MiniMoto::stop()
-{
-  byte regValue = 0;                // See above for bit 1:0 explanation.
-  
-  I2CWriteBytes(0x00, &regValue, 1); 
-}
 
-// Stop the motor by providing a heavy load on it.
-void MiniMoto::brake()
-{
-  byte regValue = 0x03;                // See above for bit 1:0 explanation.
-  
-  I2CWriteBytes(0x00, &regValue, 1); 
-}
 
 // Private function that reads some number of bytes from the accelerometer.
 void MiniMoto::I2CReadBytes(byte addr, byte *buffer, byte len)
