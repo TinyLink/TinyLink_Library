@@ -56,7 +56,8 @@ void Grove_Car_Car_RPI::Left_Motor(int speed)
   	if (regValue > 63) regValue = 63; // Cap the value at 63.
   	regValue = regValue<<2;           // Left shift to make room for bits 1:0
   	if (speed < 0) regValue |= 0x01;  // Set bits 1:0 based on sign of input.
-  	else           regValue |= 0x02;
+	else if (speed == 0) regValue |= 0x03;
+	else           regValue |= 0x02;
   
   	this->sendCommand(0x00, regValue);
 }
@@ -76,7 +77,8 @@ void Grove_Car_Car_RPI::Right_Motor(int speed)
         if (regValue > 63) regValue = 63; // Cap the value at 63.
         regValue = regValue<<2;           // Left shift to make room for bits 1:0
         if (speed < 0) regValue |= 0x01;  // Set bits 1:0 based on sign of input.
-        else           regValue |= 0x02;
+        else if (speed == 0) regValue |= 0x03;
+	else           regValue |= 0x02;
   
         this->sendCommand(0x00, regValue);
 }
@@ -105,8 +107,6 @@ void Grove_Car_Car_RPI::sendCommand( uint8_t reg_addr, uint8_t value)
  */
 void Grove_Car_Car_RPI::selectSlave(uint8_t slave)
 {
-	ioctl(DEVICE_FILE,I2C_TENBIT,1); //switch to 10-bit address module
-
 	int error = ioctl(DEVICE_FILE, I2C_SLAVE, slave);//init connection between i2c_client and slave_address;
         if(error == -1)
                 throw I2CError("[I2CError selecting Motor address]\n");
