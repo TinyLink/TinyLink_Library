@@ -33,7 +33,7 @@ namespace tinylink {
 			{
 				"-adcdev",
 				ARG_STRING,
-				"plughw:0,0",
+				"plughw:1,0",
 				"Name of audio device to use for input."
 			},
 			{

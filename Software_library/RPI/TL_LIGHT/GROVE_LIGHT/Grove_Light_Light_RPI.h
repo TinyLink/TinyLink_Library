@@ -17,6 +17,8 @@ namespace tinylink {
     };
 }
 
-extern tinylink::Grove_Light_RPI TL_Light;
+#if TINYLINK_LIGHT == GROVE_LIGHT
+	extern tinylink::Grove_Light_RPI TL_Light;
+#endif
 
 #endif

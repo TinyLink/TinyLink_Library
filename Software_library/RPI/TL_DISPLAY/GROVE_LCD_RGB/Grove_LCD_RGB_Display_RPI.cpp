@@ -150,5 +150,6 @@ void Grove_Display_RPI::selectSlave(uint8_t slave)
                 throw I2CError("[I2CError selecting LCD address]\n");
 }
 
-
-tinylink::Grove_Display_RPI TL_Display;
+#if TINYLINK_DISPLAY == GROVE_LCD_RGB
+	tinylink::Grove_Display_RPI TL_Display;
+#endif

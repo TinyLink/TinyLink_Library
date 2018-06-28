@@ -60,6 +60,9 @@
 // HTTP
 #define RPI_HTTP 1003
 
+// HCHO
+#define GROVE_HCHO 3053
+
 // Soil_Humidity
 #define SOIL_MOSITURE_ANALOG 3054
 #define GROVE_MOISTURE 3056
@@ -84,8 +87,5 @@
 
 // Car
 #define GROVE_CAR 3068
-
-// HCHO
-#define GROVE_HCHO 3053
 
 #endif

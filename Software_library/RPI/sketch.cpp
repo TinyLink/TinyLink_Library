@@ -15,7 +15,7 @@ void loop() {
 	TL_Time.delayMillis(1000);
 }
 */
-/*
+
 void loop() {
 	TL_Bulb.turnOn();
 	std::cout<<TL_Bulb.state()<<std::endl;
@@ -24,7 +24,7 @@ void loop() {
 	std::cout<<TL_Bulb.state()<<std::endl;
 	TL_Time.delayMillis(2000);
 }
-*/
+
 /*
 void loop() {
 	TL_Temperature.read();
@@ -57,6 +57,13 @@ void loop(){
 */
 /*
 void loop(){
+	TL_HCHO.read();
+	cout<<TL_HCHO.data()<<endl;
+	TL_Time.delayMillis(1000);
+}
+*/
+/*
+void loop(){
 	TL_Display.show("123");
 	TL_Time.delayMillis(1000);
 	TL_Display.show("345");
@@ -72,11 +79,3 @@ void loop() {
 	TL_Time.delayMillis(1000);
 }
 */
-void loop(){
-        double data;
-        TL_HCHO.read();
-        data=TL_HCHO.data();
-        std::cout<<data<<endl;
-        TL_Time.delayMillis(1000);
-}
-

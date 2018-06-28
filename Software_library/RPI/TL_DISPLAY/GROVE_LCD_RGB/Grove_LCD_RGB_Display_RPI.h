@@ -52,8 +52,9 @@ namespace tinylink
                   static uint8_t MAX_NO_CHARS;
   };
 }
-
-extern tinylink::Grove_Display_RPI TL_Display;
+#if TINYLINK_DISPLAY == GROVE_LCD_RGB
+	extern tinylink::Grove_Display_RPI TL_Display;
+#endif
 
 #endif
 

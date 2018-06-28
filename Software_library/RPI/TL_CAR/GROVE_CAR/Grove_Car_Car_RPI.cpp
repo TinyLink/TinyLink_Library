@@ -112,4 +112,6 @@ void Grove_Car_Car_RPI::selectSlave(uint8_t slave)
                 throw I2CError("[I2CError selecting Motor address]\n");
 }
 }
-tinylink::Grove_Car_Car_RPI TL_Car;
+#if TINYLINK_CAR == GROVE_CAR
+	tinylink::Grove_Car_Car_RPI TL_Car;
+#endif

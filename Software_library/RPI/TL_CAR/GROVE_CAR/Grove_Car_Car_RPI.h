@@ -46,8 +46,9 @@ namespace tinylink
               
   };
 }
-
-extern tinylink::Grove_Car_Car_RPI TL_Car;
+#if TINYLINK_CAR == GROVE_CAR
+	extern tinylink::Grove_Car_Car_RPI TL_Car;
+#endif
 
 #endif
 

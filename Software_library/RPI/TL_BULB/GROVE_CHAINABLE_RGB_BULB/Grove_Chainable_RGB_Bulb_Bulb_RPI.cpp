@@ -1,8 +1,10 @@
 #include "ChainableLED.h"
+#include "grovepi.h"
 #include "TL_Config.h"
 #include "Grove_Chainable_RGB_Bulb_Bulb_RPI.h"
 
 Grove_Chainable_RGB_Bulb_Bulb_RPI::Grove_Chainable_RGB_Bulb_Bulb_RPI():stateSig(0),led(1){
+	if (init_dev() == -1) exit(1);
 	led.init();
 }
 void Grove_Chainable_RGB_Bulb_Bulb_RPI::turnOn(){

@@ -68,6 +68,14 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_HCHO
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_HCHO == GROVE_HCHO
+			#include "Grove_HCHO_HCHO_RPI.h"
+		#endif
+	#endif
+#endif
+
 #ifdef TINYLINK_GPS
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_GPS == U_BLOX
@@ -178,14 +186,6 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_CAR == GROVE_CAR
 			#include "Grove_Car_Car_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_HCHO
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_HCHO == GROVE_HCHO
-			#include "Grove_HCHO_HCHO_RPI.h"
 		#endif
 	#endif
 #endif
