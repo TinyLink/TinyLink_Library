@@ -82,4 +82,8 @@
 // Car
 #define TINYLINK_CAR GROVE_CAR
 
+// DC_Motor by csp
+#define TINYLINK_MOTOR GROVE_DC_MOTOR
+#define MOTOR_DIGITAL_OUTPUT D3
+
 #endif

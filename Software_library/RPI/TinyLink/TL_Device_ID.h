@@ -88,4 +88,7 @@
 // Car
 #define GROVE_CAR 3068
 
+// Motor by csp
+#define GROVE_DC_MOTOR 3064
+
 #endif

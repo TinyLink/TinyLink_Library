@@ -190,4 +190,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_MOTOR
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_MOTOR == GROVE_DC_MOTOR
+			#include "Grove_DC_Motor_Motor_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif
