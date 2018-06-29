@@ -198,4 +198,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_SKIN_CURRENT
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_SKIN_CURRENT == GROVE_GSR
+  			#include "Grove_GSR_Skin_Current_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif

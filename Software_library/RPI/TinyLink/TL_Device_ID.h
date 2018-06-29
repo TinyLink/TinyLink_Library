@@ -91,4 +91,7 @@
 // Motor by csp
 #define GROVE_DC_MOTOR 3064
 
+// Skin Current
+#define GROVE_GSR 3066 
+
 #endif
