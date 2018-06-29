@@ -8,10 +8,12 @@
 namespace tinylink
 {
 	class Grove_GSR_Skin_Current_RPI:public Sensor<int> {
+	private:
+		int _pin;
 	protected:
 		int _read();
 	public:
-		Grove_GSR_Skin_Current_RPI();
+		Grove_GSR_Skin_Current_RPI(int pin);
 	};
 }
 #if TINYLINK_SKIN_CURRENT == GROVE_GSR
