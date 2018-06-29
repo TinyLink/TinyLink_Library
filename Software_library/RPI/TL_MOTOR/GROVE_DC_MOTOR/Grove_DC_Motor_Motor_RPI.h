@@ -9,8 +9,9 @@ namespace tinylink{
 	class Grove_DC_Motor_Motor_RPI{
 	private:
 		int stateSig;
+		int _pin;
 	public:
-		Grove_DC_Motor_Motor_RPI();
+		Grove_DC_Motor_Motor_RPI(int pin);
 		void turnOn();
 		void turnOff();
 		const int state();						// 0 for OFF, 1 for ON
