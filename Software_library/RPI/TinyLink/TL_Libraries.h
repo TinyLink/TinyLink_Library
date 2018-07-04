@@ -206,4 +206,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_ACCELEROMETER
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_ACCELEROMETER == GROVE_IMU9
+  			#include "Grove_IMU9_Accelerometer_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif
