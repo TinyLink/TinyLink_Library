@@ -21,6 +21,8 @@ public:
 	double data_z();
 };
 
-extern Grove_IMU9_Accelerometer_RPI TL_Accelerometer;
+#if TINYLINK_ACCELEROMETER == GROVE_IMU9
+	extern Grove_IMU9_Accelerometer_RPI TL_Accelerometer;
+#endif
 
 #endif

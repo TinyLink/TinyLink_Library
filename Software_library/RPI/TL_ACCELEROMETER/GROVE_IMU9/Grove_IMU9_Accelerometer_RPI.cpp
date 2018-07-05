@@ -36,4 +36,6 @@ double Grove_IMU9_Accelerometer_RPI::data_z(){
 	return (double) gz * 250 / 32768;
 }
 
-Grove_IMU9_Accelerometer_RPI TL_Accelerometer;
+#if TINYLINK_ACCELEROMETER == GROVE_IMU9
+	Grove_IMU9_Accelerometer_RPI TL_Accelerometer;
+#endif

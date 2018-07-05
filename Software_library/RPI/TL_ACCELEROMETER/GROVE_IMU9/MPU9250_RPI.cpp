@@ -64,8 +64,7 @@ void MPU9250::initialize() {
     this->DEVICE_FILE = initDevice(devAddr);
       if (ioctl(DEVICE_FILE, I2C_SLAVE, devAddr) < 0) {
     /* open fall */
-	std::cout<<"open fall"<<endl;
-     exit(1);
+      exit(1);
     }
     setClockSource(MPU9250_CLOCK_PLL_XGYRO);
     setFullScaleGyroRange(MPU9250_GYRO_FS_250);
@@ -236,7 +235,6 @@ bool MPU9250::getSleepEnabled() {
  * @see MPU9250_PWR1_SLEEP_BIT
  */
 void MPU9250::setSleepEnabled(bool enabled) {
-	std::cout<<"false="<<enabled<<endl;
     writeBit(devAddr, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_SLEEP_BIT, enabled);
 }
 /** Get clock source setting.
@@ -333,9 +331,7 @@ bool MPU9250::writeBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint
         data <<= (bitStart - length + 1); // shift data into correct position
         data &= mask; // zero all non-important bits in data
         b &= ~(mask); // zero all important bits in existing byte
-        b |= data; // combine data with existing byte
-
-	std::cout<<"b="<<(int)b<<endl;	
+        b |= data; // combine data with existing byte	
 	
         return writeByte(devAddr, regAddr, b);
     } else {
