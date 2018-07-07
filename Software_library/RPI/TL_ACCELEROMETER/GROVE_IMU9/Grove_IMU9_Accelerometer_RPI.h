@@ -10,8 +10,7 @@ class Grove_IMU9_Accelerometer_RPI{
 private:
 	MPU9250 accelgyro;
 	int status;
-	int16_t gx, gy, gz;
-	int state;
+	int16_t ax, ay, az;
 public:
 	Grove_IMU9_Accelerometer_RPI();
 	int read();		

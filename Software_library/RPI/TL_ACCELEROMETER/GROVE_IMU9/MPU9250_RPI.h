@@ -423,17 +423,21 @@ class MPU9250{
         uint8_t getFullScaleAccelRange();
         void setFullScaleAccelRange(uint8_t range);
 
-        // ACCEL_*OUT_* registers
-
-        int16_t getAccelerationX();
-        int16_t getAccelerationY();
-        int16_t getAccelerationZ();
-
         // GYRO_*OUT_* registers
-        void getRotation(int16_t* x, int16_t* y, int16_t* z);
         int16_t getRotationX();
         int16_t getRotationY();
         int16_t getRotationZ();
+
+	// MAGNET_*OUT_* registers
+	void initMagnet();
+	int16_t getMagnetionX();
+	int16_t getMagnetionY();
+	int16_t getMagnetionZ();
+
+        // ACCEL_*OUT_* registers
+        int16_t getAccelerationX();
+        int16_t getAccelerationY();
+        int16_t getAccelerationZ();
 
 	bool getSleepEnabled();
 	void setSleepEnabled(bool enabled);
@@ -449,6 +453,7 @@ class MPU9250{
         uint8_t devAddr;
         uint8_t buffer[14];
 	int DEVICE_FILE;
+	int MAGNET_FILE;
 
 	bool writeBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
 	int8_t readBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);

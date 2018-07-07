@@ -34,8 +34,12 @@ THE SOFTWARE.
 ===============================================
 */
 
+//change by csp 2018/7/7
+
 #include "MPU9250_RPI.h"
 //#define I2CDEV_SERIAL_DEBUG
+
+
 /** Default constructor, uses default I2C address.
  * @see MPU9250_DEFAULT_ADDRESS
  */
@@ -61,9 +65,13 @@ MPU9250::MPU9250(uint8_t address) {
  * the default internal clock source.
  */
 void MPU9250::initialize() {
+
     this->DEVICE_FILE = initDevice(devAddr);
       if (ioctl(DEVICE_FILE, I2C_SLAVE, devAddr) < 0) {
     /* open fall */
+#ifdef I2CDEV_SERIAL_DEBUG
+	std::cout<<"open/set handle fail"<<endl;
+#endif
       exit(1);
     }
     setClockSource(MPU9250_CLOCK_PLL_XGYRO);
@@ -146,6 +154,113 @@ void MPU9250::setFullScaleAccelRange(uint8_t range) {
     writeBits(devAddr, MPU9250_RA_ACCEL_CONFIG, MPU9250_ACONFIG_AFS_SEL_BIT, MPU9250_ACONFIG_AFS_SEL_LENGTH, range);
 }
 
+// GYRO_*OUT_* registers
+
+/** Get 3-axis gyroscope readings.
+ * These gyroscope measurement registers, along with the accelerometer
+ * measurement registers, temperature measurement registers, and external sensor
+ * data registers, are composed of two sets of registers: an internal register
+ * set and a user-facing read register set.
+ * The data within the gyroscope sensors' internal register set is always
+ * updated at the Sample Rate. Meanwhile, the user-facing read register set
+ * duplicates the internal register set's data values whenever the serial
+ * interface is idle. This guarantees that a burst read of sensor registers will
+ * read measurements from the same sampling instant. Note that if burst reads
+ * are not used, the user is responsible for ensuring a set of single byte reads
+ * correspond to a single sampling instant by checking the Data Ready interrupt.
+ *
+ * Each 16-bit gyroscope measurement has a full scale defined in FS_SEL
+ * (Register 27). For each full scale setting, the gyroscopes' sensitivity per
+ * LSB in GYRO_xOUT is shown in the table below:
+ *
+ * <pre>
+ * FS_SEL | Full Scale Range   | LSB Sensitivity
+ * -------+--------------------+----------------
+ * 0      | +/- 250 degrees/s  | 131 LSB/deg/s
+ * 1      | +/- 500 degrees/s  | 65.5 LSB/deg/s
+ * 2      | +/- 1000 degrees/s | 32.8 LSB/deg/s
+ * 3      | +/- 2000 degrees/s | 16.4 LSB/deg/s
+ * </pre>
+ *
+ * @param x 16-bit signed integer container for X-axis rotation
+ * @param y 16-bit signed integer container for Y-axis rotation
+ * @param z 16-bit signed integer container for Z-axis rotation
+ * @see getMotion6()
+ * @see MPU9250_RA_GYRO_XOUT_H
+ */
+
+/** Get X-axis gyroscope reading.
+ * @return X-axis rotation measurement in 16-bit 2's complement format
+ * @see getMotion6()
+ * @see MPU9250_RA_GYRO_XOUT_H
+ */
+int16_t MPU9250::getRotationX() {
+    readBytes(devAddr, MPU9250_RA_GYRO_XOUT_H, 2, buffer);
+    return (((int16_t)buffer[0]) << 8) | buffer[1];
+}
+/** Get Y-axis gyroscope reading.
+ * @return Y-axis rotation measurement in 16-bit 2's complement format
+ * @see getMotion6()
+ * @see MPU9250_RA_GYRO_YOUT_H
+ */
+int16_t MPU9250::getRotationY() {
+    readBytes(devAddr, MPU9250_RA_GYRO_YOUT_H, 2, buffer);
+    return (((int16_t)buffer[0]) << 8) | buffer[1];
+}
+/** Get Z-axis gyroscope reading.
+ * @return Z-axis rotation measurement in 16-bit 2's complement format
+ * @see getMotion6()
+ * @see MPU9250_RA_GYRO_ZOUT_H
+ */
+int16_t MPU9250::getRotationZ() {
+    readBytes(devAddr, MPU9250_RA_GYRO_ZOUT_H, 2, buffer);
+    return (((int16_t)buffer[0]) << 8) | buffer[1];
+}
+
+
+/** Get raw 3-axis magnetometer sensor readings (compass).
+ * @param mx 16-bit signed integer container for magnetometer X-axis value
+ * @param my 16-bit signed integer container for magnetometer Y-axis value
+ * @param mz 16-bit signed integer container for magnetometer Z-axis value
+ */
+
+
+void MPU9250::initMagnet(){
+		MPU9250::writeByte(devAddr, MPU9250_RA_INT_PIN_CFG, 0x02);  //set i2c bypass enable pin to true to access magnetometer		
+		delay(1000);
+
+		MAGNET_FILE = initDevice(MPU9150_RA_MAG_ADDRESS);
+		if (ioctl(MAGNET_FILE, I2C_SLAVE, MPU9150_RA_MAG_ADDRESS) < 0) {
+		/* open fall */
+#ifdef I2CDEV_SERIAL_DEBUG
+		std::cout<<"open/set handle fail"<<endl;
+#endif
+		exit(1);
+		}
+
+		
+}
+
+int16_t MPU9250::getMagnetionX(){
+		MPU9250::writeByte(MPU9150_RA_MAG_ADDRESS, 0x0A, 0x01);  //enable the magnetometer
+		delay(10);
+		MPU9250::readBytes(MPU9150_RA_MAG_ADDRESS, MPU9150_RA_MAG_XOUT_L, 2, buffer);
+		return (((int16_t)buffer[1]) << 8) | buffer[0];
+}
+
+int16_t MPU9250::getMagnetionY(){
+		MPU9250::writeByte(MPU9150_RA_MAG_ADDRESS, 0x0A, 0x01);  //enable the magnetometer
+		delay(10);
+		MPU9250::readBytes(MPU9150_RA_MAG_ADDRESS, MPU9150_RA_MAG_YOUT_L, 2, buffer);
+		return (((int16_t)buffer[1]) << 8) | buffer[0];
+}
+
+int16_t MPU9250::getMagnetionZ(){
+		MPU9250::writeByte(MPU9150_RA_MAG_ADDRESS, 0x0A, 0x01);  //enable the magnetometer
+		delay(10);
+		MPU9250::readBytes(MPU9150_RA_MAG_ADDRESS, MPU9150_RA_MAG_ZOUT_L, 2, buffer);
+		return (((int16_t)buffer[1]) << 8) | buffer[0];
+}
 
 /** Get 3-axis accelerometer readings.
  * These registers store the most recent accelerometer measurements.
@@ -409,14 +524,18 @@ int8_t MPU9250::readBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_
  */
 int8_t MPU9250::readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data) {
 	#ifdef I2CDEV_SERIAL_DEBUG
-        std::cout<<"I2C (0x"<<hex<<(int)devAddr<<") reading "<<(int)length<<" bytes from 0x"<<hex<<(int)regAddr<<"..."<<endl;
+        std::cout<<"I2C (0x"<<hex<<(int)devAddr<<") reading "<<(int)length<<" bytes from 0x"<<hex<<(int)regAddr<<"...";
 	#endif
+
 	int8_t count=0;
-	count = i2c_smbus_read_i2c_block_data(this->DEVICE_FILE, regAddr, length, data);
+	if(devAddr == MPU9150_RA_MAG_ADDRESS)
+	count = i2c_smbus_read_i2c_block_data(MAGNET_FILE, regAddr, length, data);	
+	else
+	count = i2c_smbus_read_i2c_block_data(DEVICE_FILE, regAddr, length, data);
 
     #ifdef I2CDEV_SERIAL_DEBUG
-        std::cout<<". Done ("<<(int)count<<"..)read"<<endl;
-	std::cout<<"data="<<static_cast<const void *>(data)<<endl; 
+        std::cout<<". Done ("<<dec<<(int)count<<"..)read";
+	std::cout<<".data0=0x"<<hex<<(int)data[0]<<"data1=0x"<<(int)(data[1])<<endl; 
     #endif
 
     return count;
@@ -449,12 +568,15 @@ bool MPU9250::writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8
     #ifdef I2CDEV_SERIAL_DEBUG
         std::cout<<"I2C (0x"<<hex<<(int)devAddr<<") writing "<<dec<<(int)length<<" bytes to 0x"<<hex<<(int)regAddr<<"...";
     #endif
+
     uint8_t status = 0;
-	
-    status = i2c_smbus_write_block_data(this->DEVICE_FILE, regAddr, length, data);	
-	
+    if(devAddr == MPU9150_RA_MAG_ADDRESS)
+    status = i2c_smbus_write_i2c_block_data(MAGNET_FILE, regAddr, length, data);
+    else
+    status = i2c_smbus_write_i2c_block_data(DEVICE_FILE, regAddr, length, data);		
+		
     #ifdef I2CDEV_SERIAL_DEBUG
-        std::cout<<". Done."<<"data=0x"<<(int)data[0]<<endl;
+        std::cout<<". Done."<<"status"<<status<<"data0=0x"<<hex<<(int)(data[0])<<endl;
     #endif
     return status == 0;
 }

@@ -214,4 +214,20 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_GYRO
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_GYRO == GROVE_IMU9
+  			#include "Grove_IMU9_Gyro_RPI.h"
+		#endif
+	#endif
+#endif
+
+#ifdef TINYLINK_MAGNET
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_MAGNET == GROVE_IMU9
+  			#include "Grove_IMU9_Magnet_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif

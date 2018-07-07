@@ -93,4 +93,10 @@
 //Accelerometer
 #define TINYLINK_ACCELEROMETER GROVE_IMU9
 
+//Gyroscope
+#define TINYLINK_GYRO GROVE_IMU9
+
+//Magnet
+#define TINYLINK_MAGNET GROVE_IMU9
+
 #endif

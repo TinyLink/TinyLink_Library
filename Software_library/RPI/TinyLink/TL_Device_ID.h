@@ -94,7 +94,7 @@
 // Skin Current
 #define GROVE_GSR 3066 
 
-//Accelerometer
+//Accelerometer,Gyroscope,Magnet
 #define GROVE_IMU9 3048
 
 
