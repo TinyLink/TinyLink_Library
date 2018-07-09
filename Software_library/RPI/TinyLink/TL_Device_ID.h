@@ -22,7 +22,7 @@
 // Temperature and Humidity Sensor
 #define DHT11 3032
 #define DHT22 3031
-
+#define TH02 3034
 // Temperature
 #define GROVE_TEMPERATURE 3033
 

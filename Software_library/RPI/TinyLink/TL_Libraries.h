@@ -230,4 +230,20 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_TEMPERATURE
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_TEMPERATURE == TH02
+  			#include "TH02_Temperature_RPI.h"
+		#endif
+	#endif
+#endif
+
+#ifdef TINYLINK_TEMPERATURE
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_TEMPERATURE == TH02
+  			#include "TH02_Humidity_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif
