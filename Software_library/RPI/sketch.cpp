@@ -117,4 +117,34 @@ void loop() {
           TL_Time.delayMillis(1000);
 }
 */
+/*
+void loop() {
 
+	  int c = TL_Accelerometer.read();
+ 	  std::cout<<"c="<<c<<endl;
+          double dataAX=TL_Accelerometer.data_x();
+	  double dataAY=TL_Accelerometer.data_y();
+	  double dataAZ=TL_Accelerometer.data_z();
+      
+          std::cout<<"AX="<<dataAX<<"\nAY="<<dataAY<<"\nAZ="<<dataAZ<<std::endl;
+          //TL_Time.delayMillis(1000);
+	 
+	  int b =TL_Gyro.read();
+	  std::cout<<"b="<<b<<endl;
+          double dataGX=TL_Gyro.data_x();
+	  double dataGY=TL_Gyro.data_y();
+	  double dataGZ=TL_Gyro.data_z();
+      
+          std::cout<<"GX="<<dataGX<<"\nGY="<<dataGY<<"\nGZ="<<dataGZ<<std::endl;
+          //TL_Time.delayMillis(1000);
+
+          int a=TL_Magnet.read();
+	  std::cout<<"a="<<a<<endl;
+          double dataMX=TL_Magnet.data_x();
+	  double dataMY=TL_Magnet.data_y();
+	  double dataMZ=TL_Magnet.data_z();
+      
+          std::cout<<"MX="<<dataMX<<"\nMY="<<dataMY<<"\nMZ="<<dataMZ<<std::endl;
+          TL_Time.delayMillis(1000);
+}
+*/
