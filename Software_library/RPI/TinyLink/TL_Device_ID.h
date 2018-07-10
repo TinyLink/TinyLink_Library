@@ -69,6 +69,7 @@
 
 // Light
 #define GROVE_LIGHT 3023
+#define GROVE_DIGITAL_LIGHT 3001
 
 // Sound
 #define GROVE_SOUND 3030

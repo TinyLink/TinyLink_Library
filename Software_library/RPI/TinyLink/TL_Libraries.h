@@ -246,4 +246,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_LIGHT
+	#if PLATFORM == 4 && BOARD == 1003
+		#if TINYLINK_LIGHT == GROVE_DIGITAL_LIGHT
+  			#include "Grove_Digital_Light_Light_RPI.h"
+		#endif
+	#endif
+#endif
+
 #endif
