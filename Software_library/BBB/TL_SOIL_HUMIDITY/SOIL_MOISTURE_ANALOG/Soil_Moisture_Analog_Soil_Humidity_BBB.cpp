@@ -10,7 +10,7 @@ int Soil_Moisture_Analog::_read() {
 }
 
 #if PLATFORM == 3 && BOARD == 1005
-	#if TINYLINK_RELAY == GROVE_RELAY
+	#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
 		Soil_Moisture_Analog TL_Soil_Humidity(SOIL_HUMIDITY_ANALOG);
 	#endif
 #endif
