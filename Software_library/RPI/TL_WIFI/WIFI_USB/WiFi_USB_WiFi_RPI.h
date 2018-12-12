@@ -16,10 +16,6 @@
 	#include "RPI_MQTT_MQTT_RPI.h"
 #endif
 
-#ifdef TINYLINK_TCP
-	#include "RPI_TCP_TCP_RPI.h"
-#endif
-
 using namespace std;
 
 namespace tinylink {
@@ -42,10 +38,8 @@ namespace tinylink {
 #ifdef TINYLINK_MQTT
 		TL_MQTT& fetchMQTT();
 #endif
-#ifdef TINYLINK_TCP
-		TL_TCP& fetchTCP();
-#endif
 	};
+
 }
 
 extern tinylink::Wifi_Network TL_WiFi;

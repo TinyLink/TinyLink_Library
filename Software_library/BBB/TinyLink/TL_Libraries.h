@@ -121,8 +121,6 @@
 	#if PLATFORM == 3 && BOARD == 1005
 		#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
 			#include "Soil_Moisture_Analog_Soil_Humidity_BBB.h"
-		#elif TINYLINK_SOIL_HUMIDITY == GROVE_MOISTURE
-			#include "Grove_Moisture_Soil_Humidity_BBB.h"
 		#endif
 	#endif
 #endif
@@ -151,22 +149,6 @@
 	#endif
 #endif
 
-#ifdef TINYLINK_TEMPERATURE
-	#if PLATFORM == 3 && BOARD == 1005
-		#if TINYLINK_TEMPERATURE == GROVE_TEMPERATURE
-			#include "Grove_Temperature_Temperature_BBB.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_HCHO
-	#if PLATFORM == 3 && BOARD == 1005
-		#if TINYLINK_HCHO == GROVE_HCHO
-			#include "Grove_HCHO_HCHO_BBB.h"
-		#endif
-	#endif
-#endif
-
 // Control library              --------------------------------------------------------------------
 #ifdef TINYLINK_LED
 	#if PLATFORM == 3 && BOARD == 1005
@@ -190,14 +172,6 @@
 	#if PLATFORM == 3 && BOARD == 1005
 		#if TINYLINK_BULB == GROVE_CHAINABLE_RGB_BULB
 			#include "Grove_Chainable_RGB_Bulb_Bulb_BBB.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_MOTOR
-	#if PLATFORM == 3 && BOARD == 1005
-		#if TINYLINK_MOTOR == GROVE_DC_MOTOR
-			#include "Grove_DC_Motor_Motor_BBB.h"
 		#endif
 	#endif
 #endif

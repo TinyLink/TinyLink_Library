@@ -306,9 +306,9 @@ float toFloat(unsigned char a[4]) {
     return ans;
 }
 
-pair<float, float> dht(int pin, int module) {
+pair<float, float> dht(int pin) {
 	int data;
-	write_block(40 ,pin,module,0);
+	write_block(40 ,pin,0,0);
 	read_byte();
 	read_block();
     return pair<float, float>(toFloat(r_buf + 1), toFloat(r_buf + 5));

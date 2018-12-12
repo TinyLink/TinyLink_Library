@@ -40,10 +40,6 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_TEMPERATURE == DHT11
 			#include "DHT11_Temperature_RPI.h"
-		#elif TINYLINK_TEMPERATURE == DHT22
-			#include "DHT22_Temperature_RPI.h"
-		#elif TINYLINK_TEMPERATURE == GROVE_TEMPERATURE
-			#include "Grove_Temperature_Temperature_RPI.h"
 		#endif
 	#endif
 #endif
@@ -52,8 +48,6 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_HUMIDITY == DHT11
 			#include "DHT11_Humidity_RPI.h"
-		#elif TINYLINK_HUMIDITY == DHT22
-			#include "DHT22_Humidity_RPI.h"
 		#endif
 	#endif
 #endif
@@ -62,16 +56,6 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
 			#include "Soil_Moisture_Analog_Soil_Humidity_RPI.h"
-		#elif TINYLINK_SOIL_HUMIDITY == GROVE_MOISTURE
-			#include "Grove_Moisture_Soil_Humidity_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_HCHO
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_HCHO == GROVE_HCHO
-			#include "Grove_HCHO_HCHO_RPI.h"
 		#endif
 	#endif
 #endif
@@ -92,14 +76,6 @@
 	#if PLATFORM == 4 && BOARD == 1003
 		#if TINYLINK_WIFI == WIFI_USB
 			#include "WiFi_USB_WiFi_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_TCP
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_TCP == RPI_TCP
-			#include "RPI_TCP_TCP_RPI.h"
 		#endif
 	#endif
 #endif
@@ -171,86 +147,6 @@
 #ifdef TINYLINK_DISPLAY
 	#if TINYLINK_DISPLAY == GROVE_LCD_RGB
 		#include "Grove_LCD_RGB_Display_RPI.h"
-	#endif
-#endif
-
-#ifdef TINYLINK_BULB
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_BULB == GROVE_CHAINABLE_RGB_BULB
-			#include "Grove_Chainable_RGB_Bulb_Bulb_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_CAR
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_CAR == GROVE_CAR
-			#include "Grove_Car_Car_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_MOTOR
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_MOTOR == GROVE_DC_MOTOR
-			#include "Grove_DC_Motor_Motor_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_SKIN_CURRENT
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_SKIN_CURRENT == GROVE_GSR
-  			#include "Grove_GSR_Skin_Current_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_ACCELEROMETER
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_ACCELEROMETER == GROVE_IMU9
-  			#include "Grove_IMU9_Accelerometer_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_GYRO
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_GYRO == GROVE_IMU9
-  			#include "Grove_IMU9_Gyro_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_MAGNET
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_MAGNET == GROVE_IMU9
-  			#include "Grove_IMU9_Magnet_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_TEMPERATURE
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_TEMPERATURE == TH02
-  			#include "TH02_Temperature_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_TEMPERATURE
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_TEMPERATURE == TH02
-  			#include "TH02_Humidity_RPI.h"
-		#endif
-	#endif
-#endif
-
-#ifdef TINYLINK_LIGHT
-	#if PLATFORM == 4 && BOARD == 1003
-		#if TINYLINK_LIGHT == GROVE_DIGITAL_LIGHT
-  			#include "Grove_Digital_Light_Light_RPI.h"
-		#endif
 	#endif
 #endif
 

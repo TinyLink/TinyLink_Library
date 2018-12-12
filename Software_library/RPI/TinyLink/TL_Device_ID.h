@@ -20,11 +20,10 @@
 #define GROVE_LED 3069
 
 // Temperature and Humidity Sensor
-#define DHT11 3032
-#define DHT22 3031
-#define TH02 3034
-// Temperature
-#define GROVE_TEMPERATURE 3033
+#define DHT11 3031
+#define DHT22 3032
+
+// HUmidity Sensor
 
 // GPS Sensor
 #define U_BLOX 3018
@@ -51,25 +50,17 @@
 #define WIFI_USB 3010
 #define ESP8266 3037
 
-// TCP
-#define RPI_TCP 1003
-
 // MQTT
 #define RPI_MQTT 1003
 
 // HTTP
 #define RPI_HTTP 1003
 
-// HCHO
-#define GROVE_HCHO 3053
-
 // Soil_Humidity
 #define SOIL_MOSITURE_ANALOG 3054
-#define GROVE_MOISTURE 3056
 
 // Light
 #define GROVE_LIGHT 3023
-#define GROVE_DIGITAL_LIGHT 3001
 
 // Sound
 #define GROVE_SOUND 3030
@@ -82,21 +73,5 @@
 
 // Display
 #define GROVE_LCD_RGB 3063
-
-// Bulb
-#define GROVE_CHAINABLE_RGB_BULB 3067
-
-// Car
-#define GROVE_CAR 3068
-
-// Motor by csp
-#define GROVE_DC_MOTOR 3064
-
-// Skin Current
-#define GROVE_GSR 3066 
-
-//Accelerometer,Gyroscope,Magnet
-#define GROVE_IMU9 3048
-
 
 #endif

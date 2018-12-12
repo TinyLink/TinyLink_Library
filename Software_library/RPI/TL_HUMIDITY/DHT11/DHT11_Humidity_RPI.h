@@ -19,8 +19,8 @@ namespace tinylink {
 	};
 
 }
-#if TINYLINK_HUMIDITY == DHT11
-	extern tinylink::DHT11_HUMIDITY TL_Humidity;
-#endif
+
+extern tinylink::DHT11_HUMIDITY TL_Humidity;
+
 #endif
 

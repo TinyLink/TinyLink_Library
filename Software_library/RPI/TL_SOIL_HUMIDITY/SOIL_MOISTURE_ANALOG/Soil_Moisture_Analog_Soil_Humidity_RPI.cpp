@@ -13,6 +13,5 @@ namespace tinylink {
 	}
 
 }
-#if TINYLINK_SOIL_HUMIDITY == SOIL_MOISTURE_ANALOG
-	tinylink::Soil_Moisture_Analog_Soil_Humidity TL_Soil_Humidity(SOIL_HUMIDITY_ANALOG);
-#endif
+
+tinylink::Soil_Moisture_Analog_Soil_Humidity TL_Soil_Humidity(SOIL_HUMIDITY_ANALOG);

@@ -13,5 +13,5 @@ int TH02_Temperature_RPI::_read(){
 }
 
 #if TINYLINK_TEMPERATURE == TH02
-TH02_Temperature_RPI TL_Temperature;
+	TH02_Temperature_RPI TL_Temperature;
 #endif

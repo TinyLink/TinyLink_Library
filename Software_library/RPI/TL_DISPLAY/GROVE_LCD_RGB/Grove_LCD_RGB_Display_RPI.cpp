@@ -1,7 +1,7 @@
 #include "Grove_LCD_RGB_Display_RPI.h"
-#include "TL_Config.h"
-//using tinylink::Grove_Display_RPI;
-namespace tinylink{
+
+using tinylink::Grove_Display_RPI;
+
 uint8_t Grove_Display_RPI::DISPLAY_RGB_ADDR = 0x62;
 uint8_t Grove_Display_RPI::DISPLAY_TEXT_ADDR = 0x3e;
 
@@ -85,7 +85,7 @@ void Grove_Display_RPI::show(const char *str)
 	//this->setRGB(0, 128, 64);
         this->selectSlave(Grove_Display_RPI::DISPLAY_TEXT_ADDR);
 
-        this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::CLEAR_DISPLAY);
+        //this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::CLEAR_DISPLAY);
         delay(50);
         this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::DISPLAY_ON | Grove_Display_RPI::NO_CURSOR);
         this->sendCommand(Grove_Display_RPI::PROGRAM_MODE, Grove_Display_RPI::ENABLE_2ROWS);
@@ -149,7 +149,6 @@ void Grove_Display_RPI::selectSlave(uint8_t slave)
         if(error == -1)
                 throw I2CError("[I2CError selecting LCD address]\n");
 }
-}
-#if TINYLINK_DISPLAY == GROVE_LCD_RGB
-	tinylink::Grove_Display_RPI TL_Display;
-#endif
+
+
+tinylink::Grove_Display_RPI TL_Display;

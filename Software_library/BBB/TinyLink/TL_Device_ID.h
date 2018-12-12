@@ -19,7 +19,7 @@
 // Temperature && Humidity Sensor
 #define DHT11 3032
 #define DHT22 3031
-#define GROVE_TEMPERATURE 3033\
+
 //Storage
 #define BBB_SD 1005
 
@@ -41,7 +41,7 @@
 
 // Soil_Humidity
 #define SOIL_MOSITURE_ANALOG 3054
-#define GROVE_MOISTURE 3056
+
 // Sound
 #define GROVE_SOUND 3030
 
@@ -50,11 +50,5 @@
 
 // Bulb
 #define GROVE_CHAINABLE_RGB_BULB 3067
-
-// HCHO
-#define GROVE_HCHO 3053
-
-// Motor by csp
-#define GROVE_DC_MOTOR 3064
 
 #endif
