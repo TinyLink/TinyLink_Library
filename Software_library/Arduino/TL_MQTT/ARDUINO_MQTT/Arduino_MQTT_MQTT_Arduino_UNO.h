@@ -16,7 +16,11 @@ private:
 	int _port;
 	Client* tcpClient;
 	IPStack* ipstack;
+#if BOARD == 1008
+	MQTT::Client<IPStack, Countdown, 200>* client;
+#elif BOARD == 1002
 	MQTT::Client<IPStack, Countdown, 100>* client;
+#endif
 public:
 	TL_MQTT();
 	TL_MQTT(const TL_MQTT& mqtt);

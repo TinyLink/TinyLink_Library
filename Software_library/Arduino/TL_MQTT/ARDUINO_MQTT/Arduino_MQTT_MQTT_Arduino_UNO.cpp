@@ -10,7 +10,11 @@ TL_MQTT::TL_MQTT():_serverName(NULL), _clientName(NULL), _userName(NULL), _passw
 		ipstack = new IPStack(*tcpClient);
 	}
 	if(client == NULL){
+#if BOARD == 1008
+		client = new MQTT::Client<IPStack, Countdown, 200>(*ipstack);
+#elif BOARD == 1002
 		client = new MQTT::Client<IPStack, Countdown, 100>(*ipstack);
+#endif
 	}
 }
 
@@ -24,7 +28,11 @@ TL_MQTT::TL_MQTT(const TL_MQTT& mqtt):_serverName(NULL), _clientName(NULL), _use
 		ipstack = new IPStack(*tcpClient);
 	}
 	if(client == NULL){
+#if BOARD == 1008
+		client = new MQTT::Client<IPStack, Countdown, 200>(*ipstack);
+#elif BOARD == 1002
 		client = new MQTT::Client<IPStack, Countdown, 100>(*ipstack);
+#endif
 	}
 }
 
@@ -69,7 +77,11 @@ TL_MQTT& TL_MQTT::operator=(const TL_MQTT& mqtt){
 		ipstack = new IPStack(*tcpClient);
 	}
 	if(client == NULL){
+#if BOARD == 1008
+		client = new MQTT::Client<IPStack, Countdown, 200>(*ipstack);
+#elif BOARD == 1002
 		client = new MQTT::Client<IPStack, Countdown, 100>(*ipstack);
+#endif
 	}
 	return *this;
 }
@@ -108,7 +120,7 @@ int TL_MQTT::connect(const char* serverName, const int port, const char* clientN
 	if(!client->isConnected()){
 		int rc = ipstack->connect(_serverName, _port);
 		if (rc != 1){
-			return rc;
+			return -1;
 		}
 		MQTTPacket_connectData data = MQTTPacket_connectData_initializer;       
 		data.MQTTVersion = 4;
@@ -142,6 +154,7 @@ int TL_MQTT::reconnect(){
 
 int TL_MQTT::disconnect(){
 	client->disconnect();
+	ipstack->disconnect();
 	return 0;
 }
 

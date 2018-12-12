@@ -92,6 +92,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_HCHO
+	#if TINYLINK_HCHO == GROVE_HCHO
+		#include "Grove_HCHO_HCHO_LinkIt_One.h"
+	#endif
+#endif
+
 #ifdef TINYLINK_LIGHT
 	#if TINYLINK_LIGHT == GROVE_LIGHT
 		#include "Grove_Light_Light_LinkIt_One.h"
@@ -158,6 +164,12 @@
 #ifdef TINYLINK_MOTOR
 	#if TINYLINK_MOTOR == GROVE_DC_MOTOR
 		#include "Grove_DC_Motor_Motor_LinkIt_One.h"
+	#endif
+#endif
+
+#ifdef TINYLINK_CAR
+	#if TINYLINK_CAR == GROVE_CAR
+		#include "Grove_Car_Car_LinkIt_One.h"
 	#endif
 #endif
 

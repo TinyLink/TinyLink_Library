@@ -1,3 +1,0 @@
-In Attention:
-1. Put Origin_SD_lib to the Arduino lib, just cover the file.read(void *buf, uint16_t nbyte) and file.write(String) -- overload.
-2. Put WiFiEsp, mqtt dir into libraries

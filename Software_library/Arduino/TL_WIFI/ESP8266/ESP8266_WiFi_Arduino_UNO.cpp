@@ -3,7 +3,19 @@
 #if WIFI_UART_TX == 0 && WIFI_UART_RX == 1
 	#define ESP_WiFi Serial
 #else
-	SoftwareSerial ESP_WiFi(WIFI_UART_TX, WIFI_UART_RX);
+	#if BOARD == 1008
+		#if WIFI_UART_TX == 0 && WIFI_UART_RX == 1
+			#define ESP_WiFi Serial
+		#elif WIFI_UART_TX == 19 && WIFI_UART_RX == 18
+			#define ESP_WiFi Serial1
+		#elif WIFI_UART_TX == 17 && WIFI_UART_RX == 16
+			#define ESP_WiFi Serial2
+		#elif WIFI_UART_TX == 15 && WIFI_UART_RX == 14
+			#define ESP_WiFi Serial3
+		#endif
+	#else	
+		SoftwareSerial ESP_WiFi(WIFI_UART_TX, WIFI_UART_RX);
+	#endif
 #endif
 
 //SoftwareSerial ESP_WiFi(2, 3);

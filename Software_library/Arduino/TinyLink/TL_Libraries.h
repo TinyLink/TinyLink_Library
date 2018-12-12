@@ -34,6 +34,12 @@
 	#endif
 #endif
 
+#ifdef TINYLINK_JSON
+	#if TINYLINK_JSON == ARDUINO_JSON
+		#include "TL_JSON.h"
+	#endif
+#endif
+
 // Communication library	--------------------------------------------------------------------
 #ifdef TINYLINK_BLUETOOTH
 	#if TINYLINK_BLUETOOTH == DUAL_BLE
@@ -95,6 +101,12 @@
 #ifdef TINYLINK_PM25
 	#if TINYLINK_PM25 == SDS018
 		#include "SDS018_PM25_Arduino_UNO.h"
+	#endif
+#endif
+
+#ifdef TINYLINK_HCHO
+	#if TINYLINK_HCHO == GROVE_HCHO
+		#include "Grove_HCHO_HCHO_Arduino_UNO.h"
 	#endif
 #endif
 
@@ -185,9 +197,9 @@
 	#endif
 #endif
 
-#ifdef TINYLINK_HCHO
-	#if TINYLINK_HCHO == GROVE_HCHO
-		#include "Grove_HCHO_HCHO_Arduino_UNO.h"
+#ifdef TINYLINK_CAR
+	#if TINYLINK_CAR == GROVE_CAR
+		#include "Grove_Car_Car_Arduino_UNO.h"
 	#endif
 #endif
 
