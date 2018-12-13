@@ -6,4 +6,5 @@ void setup(){
 void loop(){
 	TL_Light.read();
 	TL_Serial.println(TL_Light.data());
+	TL_Time.delayMillis(1000);
 }
