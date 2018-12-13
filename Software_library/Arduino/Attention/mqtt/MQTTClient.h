@@ -14,10 +14,6 @@
  *    Ian Craggs - initial API and implementation and/or initial documentation
  *    Ian Craggs - fix for bug 458512 - QoS 2 messages
  *    Ian Craggs - fix for bug 460389 - send loop uses wrong length
- *    Ian Craggs - fix for bug 464169 - clearing subscriptions
- *    Ian Craggs - fix for bug 464551 - enums and ints can be different size
- *    Mark Sonnentag - fix for bug 475204 - inefficient instantiation of Timer
- *    Ian Craggs - fix for bug 475749 - packetid modified twice
  *******************************************************************************/
 
 #if !defined(MQTTCLIENT_H)
@@ -27,6 +23,7 @@
 #include "MQTTPacket.h"
 #include "stdio.h"
 #include "MQTTLogging.h"
+
 
 #if !defined(MQTTCLIENT_QOS1)
     #define MQTTCLIENT_QOS1 1
@@ -76,7 +73,7 @@ public:
 
     int getNext()
     {
-        return next = (next == MAX_PACKET_ID) ? 1 : next + 1;
+        return next = (next == MAX_PACKET_ID) ? 1 : ++next;
     }
 
 private:
@@ -94,7 +91,7 @@ private:
  * @param Network a network class which supports send, receive
  * @param Timer a timer class with the methods:
  */
-template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE = 140, int MAX_MESSAGE_HANDLERS = 5>
+template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE = 100, int MAX_MESSAGE_HANDLERS = 5>
 class Client
 {
 
@@ -196,7 +193,6 @@ public:
 
 private:
 
-	void cleanSession();
     int cycle(Timer& timer);
     int waitfor(int packet_type, Timer& timer);
     int keepalive();
@@ -255,11 +251,14 @@ private:
 
 
 template<class Network, class Timer, int a, int MAX_MESSAGE_HANDLERS>
-void MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::cleanSession() 
+MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::Client(Network& network, unsigned int command_timeout_ms)  : ipstack(network), packetid()
 {
+    last_sent = Timer();
+    last_received = Timer();
     ping_outstanding = false;
     for (int i = 0; i < MAX_MESSAGE_HANDLERS; ++i)
         messageHandlers[i].topicFilter = 0;
+    this->command_timeout_ms = command_timeout_ms;
     isconnected = false;
 
 #if MQTTCLIENT_QOS1 || MQTTCLIENT_QOS2
@@ -267,21 +266,13 @@ void MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::cleanSession()
     inflightQoS = QOS0;
 #endif
 
+
 #if MQTTCLIENT_QOS2
     pubrel = false;
     for (int i = 0; i < MAX_INCOMING_QOS2_MESSAGES; ++i)
         incomingQoS2messages[i] = 0;
 #endif
 }
-
-
-template<class Network, class Timer, int a, int MAX_MESSAGE_HANDLERS>
-MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::Client(Network& network, unsigned int command_timeout_ms)  : ipstack(network), packetid()
-{
-    this->command_timeout_ms = command_timeout_ms;
-	cleanSession();
-}
-
 
 #if MQTTCLIENT_QOS2
 template<class Network, class Timer, int a, int b>
@@ -398,6 +389,7 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::readPacket(Timer& tim
     MQTTHeader header = {0};
     int len = 0;
     int rem_len = 0;
+	int read = 0;
 
     /* 1. read the header byte.  This has the packet type in it */
     if (ipstack.read(readbuf, 1, timer.left_ms()) != 1)
@@ -504,7 +496,7 @@ template<class Network, class Timer, int a, int b>
 int MQTT::Client<Network, Timer, a, b>::yield(unsigned long timeout_ms)
 {
     int rc = SUCCESS;
-    Timer timer;
+    Timer timer = Timer();
 
     timer.countdown_ms(timeout_ms);
     while (!timer.expired())
@@ -545,11 +537,9 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::cycle(Timer& timer)
 		{
             MQTTString topicName = MQTTString_initializer;
             Message msg;
-            int intQoS;
-            if (MQTTDeserialize_publish((unsigned char*)&msg.dup, &intQoS, (unsigned char*)&msg.retained, (unsigned short*)&msg.id, &topicName,
+            if (MQTTDeserialize_publish((unsigned char*)&msg.dup, (int*)&msg.qos, (unsigned char*)&msg.retained, (unsigned short*)&msg.id, &topicName,
                                  (unsigned char**)&msg.payload, (int*)&msg.payloadlen, readbuf, MAX_MQTT_PACKET_SIZE) != 1)
                 goto exit;
-            msg.qos = (enum QoS)intQoS;
 #if MQTTCLIENT_QOS2
             if (msg.qos != QOS2)
 #endif
@@ -628,7 +618,7 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::keepalive()
     {
         if (!ping_outstanding)
         {
-            Timer timer(1000);
+            Timer timer = Timer(1000);
             int len = MQTTSerialize_pingreq(sendbuf, MAX_MQTT_PACKET_SIZE);
             if (len > 0 && (rc = sendPacket(len, timer)) == SUCCESS) // send the ping packet
                 ping_outstanding = true;
@@ -660,10 +650,9 @@ int MQTT::Client<Network, Timer, a, b>::waitfor(int packet_type, Timer& timer)
 template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE, int b>
 int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::connect(MQTTPacket_connectData& options)
 {
-    Timer connect_timer(command_timeout_ms);
+    Timer connect_timer = Timer(command_timeout_ms);
     int rc = FAILURE;
     int len = 0;
-
     if (isconnected) // don't send connect packet again if we are already connected
         goto exit;
 
@@ -671,13 +660,13 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::connect(MQTTPacket_co
     this->cleansession = options.cleansession;
     if ((len = MQTTSerialize_connect(sendbuf, MAX_MQTT_PACKET_SIZE, &options)) <= 0)
         goto exit;
+	
     if ((rc = sendPacket(len, connect_timer)) != SUCCESS)  // send the connect packet
         goto exit; // there was a problem
 
     if (this->keepAliveInterval > 0)
         last_received.countdown(this->keepAliveInterval);
     // this will be a blocking call, wait for the connack
-    /*  Annotated for LinkitOne won't receive ACK
     if (waitfor(CONNACK, connect_timer) == CONNACK)
     {
         unsigned char connack_rc = 255;
@@ -689,12 +678,10 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::connect(MQTTPacket_co
     }
     else
         rc = FAILURE;
-    */
-    rc = SUCCESS;	// Added
 
 #if MQTTCLIENT_QOS2
-    // resend any inflight publish
-    if (inflightMsgid > 0 && inflightQoS == QOS2 && pubrel)
+    // resend an inflight publish
+    if (inflightMsgid >0 && inflightQoS == QOS2 && pubrel)
     {
         if ((len = MQTTSerialize_ack(sendbuf, MAX_MQTT_PACKET_SIZE, PUBREL, 0, inflightMsgid)) <= 0)
             rc = FAILURE;
@@ -730,9 +717,9 @@ template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE, int MAX_MESSAGE_H
 int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>::subscribe(const char* topicFilter, enum QoS qos, messageHandler messageHandler)
 {
     int rc = FAILURE;
-    Timer timer(command_timeout_ms);
+    Timer timer = Timer(command_timeout_ms);
     int len = 0;
-    MQTTString topic = {(char*)topicFilter, {0, 0}};
+    MQTTString topic = {(char*)topicFilter, 0, 0};
 
     if (!isconnected)
         goto exit;
@@ -742,7 +729,7 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>::su
         goto exit;
     if ((rc = sendPacket(len, timer)) != SUCCESS) // send the subscribe packet
         goto exit;             // there was a problem
-	/* Annotated for LinkitOne won't receive ACK
+
     if (waitfor(SUBACK, timer) == SUBACK)      // wait for suback
     {
         int count = 0, grantedQoS = -1;
@@ -765,11 +752,10 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>::su
     }
     else
         rc = FAILURE;
-	*/
-	rc = SUCCESS;	// Added
+
 exit:
     if (rc != SUCCESS)
-		cleanSession();
+        isconnected = false;
     return rc;
 }
 
@@ -778,8 +764,8 @@ template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE, int MAX_MESSAGE_H
 int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>::unsubscribe(const char* topicFilter)
 {
     int rc = FAILURE;
-    Timer timer(command_timeout_ms);
-    MQTTString topic = {(char*)topicFilter, {0, 0}};
+    Timer timer = Timer(command_timeout_ms);
+    MQTTString topic = {(char*)topicFilter, 0, 0};
     int len = 0;
 
     if (!isconnected)
@@ -789,32 +775,19 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>::un
         goto exit;
     if ((rc = sendPacket(len, timer)) != SUCCESS) // send the unsubscribe packet
         goto exit; // there was a problem
-	/* Annotated for LinkitOne won't receive ACK
+
     if (waitfor(UNSUBACK, timer) == UNSUBACK)
     {
         unsigned short mypacketid;  // should be the same as the packetid above
         if (MQTTDeserialize_unsuback(&mypacketid, readbuf, MAX_MQTT_PACKET_SIZE) == 1)
-		{
             rc = 0;
-
-			// remove the subscription message handler associated with this topic, if there is one
-			for (int i = 0; i < MAX_MESSAGE_HANDLERS; ++i)
-            {
-                if (messageHandlers[i].topicFilter != 0 && strcmp(messageHandlers[i].topicFilter, topicFilter) == 0)
-                {
-                    messageHandlers[i].topicFilter = 0;
-                    break;
-                }
-            }
-		}
     }
     else
         rc = FAILURE;
-	*/
-	rc = SUCCESS;	// Added
+
 exit:
     if (rc != SUCCESS)
-		cleanSession();
+        isconnected = false;
     return rc;
 }
 
@@ -861,7 +834,7 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::publish(int len, Time
 
 exit:
     if (rc != SUCCESS)
-		cleanSession();
+        isconnected = false;
     return rc;
 }
 
@@ -871,9 +844,10 @@ template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE, int b>
 int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::publish(const char* topicName, void* payload, size_t payloadlen, unsigned short& id, enum QoS qos, bool retained)
 {
     int rc = FAILURE;
-    Timer timer(command_timeout_ms);
+    Timer timer = Timer(command_timeout_ms);
     MQTTString topicString = MQTTString_initializer;
     int len = 0;
+
     if (!isconnected)
         goto exit;
 
@@ -883,6 +857,7 @@ int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::publish(const char* t
     if (qos == QOS1 || qos == QOS2)
         id = packetid.getNext();
 #endif
+
     len = MQTTSerialize_publish(sendbuf, MAX_MQTT_PACKET_SIZE, 0, qos, retained, id,
               topicString, (unsigned char*)payload, payloadlen);
     if (len <= 0)
@@ -926,15 +901,12 @@ template<class Network, class Timer, int MAX_MQTT_PACKET_SIZE, int b>
 int MQTT::Client<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::disconnect()
 {
     int rc = FAILURE;
-    Timer timer(command_timeout_ms);     // we might wait for incomplete incoming publishes to complete
+    Timer timer = Timer(command_timeout_ms);     // we might wait for incomplete incoming publishes to complete
     int len = MQTTSerialize_disconnect(sendbuf, MAX_MQTT_PACKET_SIZE);
     if (len > 0)
         rc = sendPacket(len, timer);            // send the disconnect packet
 
-	if (cleansession)
-		cleanSession();
-	else
-	    isconnected = false;
+    isconnected = false;
     return rc;
 }
 
