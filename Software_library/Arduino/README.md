@@ -1,7 +1,7 @@
 # 基于Arduino（LinkIT ONE）开发平台扩充TinyLink软件库
 ## Step 1. 搭建本地Arduino平台下的TinyLink环境
 ### 1. 下载[Arduino IDE](https://www.arduino.cc/en/Main/Software)
-### 2. 下载[Arduino库](https://github.com/TinyLink/TinyLink_Library/tree/master/Software_library/Arduino)到本地，将Arduino目录下所有的文件夹拷贝至arduino-1.x.x\libraries下，将[Attention文件夹](https://github.com/TinyLink/TinyLink_Library/tree/master/Software_library/Arduino/Attention)下的WiFiEsp和mqtt拷贝至arduino-1.x.x\libraries下，将[File.cpp](https://github.com/TinyLink/TinyLink_Library/blob/master/Software_library/Arduino/Attention/Origin_SD_lib/File.cpp)覆盖arduino-1.x.x\libraries\SD\src\File.cpp。注意，由于Arduino IDE不会自动编译三级目录下的源文件，需要将TL_Function目录下文件夹中的所有源文件拷贝至TL_Function目录下，用到哪个模块就拷贝哪个。例如把TL_Temperature/DHT11/*.cpp和TL_Temperature/DHT11/*.h拷贝至TL_Temperature.
+### 2. 下载[Arduino库](https://github.com/TinyLink/TinyLink_Library/tree/master/Software_library/Arduino)到本地，将Arduino目录下所有的文件夹拷贝至arduino-1.x.x\libraries下，将[Attention文件夹](https://github.com/TinyLink/TinyLink_Library/tree/master/Software_library/Arduino/Attention)下的WiFiEsp和mqtt拷贝至arduino-1.x.x\libraries下，将[File.cpp](https://github.com/TinyLink/TinyLink_Library/blob/master/Software_library/Arduino/Attention/Origin_SD_lib/File.cpp)覆盖arduino-1.x.x\libraries\SD\src\File.cpp。注意，由于Arduino IDE不会自动编译三级目录下的源文件，需要将TL_Function目录下文件夹中的所有源文件拷贝至TL_Function目录下，用到哪个模块就拷贝哪个。例如把TL_Temperature/DHT11/\*.cpp和TL_Temperature/DHT11/\*.h拷贝至TL_Temperature
 ## Step 2. 封装传感器驱动库（以扩充Grove Light Sensor为例）
 ### 1. 查阅[wiki说明](https://github.com/TinyLink/TinyLink_Library/wiki/Config_Header_File_Generation)，在表"Mapping among Device, Functionality and Module"中发现Grove Light Sensor的ID为3023，Function为Light，Module为Grove_Light。
 ### 2. 在TinyLink/TL_Device_ID.h添加#define GROVE_LIGHT 3023，在TinyLink/TL_Libraries.h添加:
