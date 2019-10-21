@@ -40,8 +40,6 @@ class MiniMoto
   public:
     MiniMoto(byte addr);
     void drive(int speed);
-    void stop();
-    void brake();
     byte getFault();
   private:
     void I2CWriteBytes(byte addr, byte *buffer, byte len);

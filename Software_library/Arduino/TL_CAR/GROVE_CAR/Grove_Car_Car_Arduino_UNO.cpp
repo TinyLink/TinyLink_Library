@@ -15,8 +15,10 @@ void Grove_Car_Car_Arduino_UNO::moveBack(){
 }
 
 void Grove_Car_Car_Arduino_UNO::stop(){
-    motor0.brake();
-    motor1.brake();
+
+    motor0.drive(0);
+    motor1.drive(0);
+
 }
 
 void Grove_Car_Car_Arduino_UNO::turnLeft(){
@@ -30,4 +32,6 @@ void Grove_Car_Car_Arduino_UNO::turnRight(){
 }
 
 
+
 Grove_Car_Car_Arduino_UNO TL_Car;
+
